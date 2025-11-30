@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Workout Tracker</title>
+    <title>NEXUS TRACKER | V12</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -76,12 +76,10 @@
         .week-btn.active { border-color: var(--neon-purple); color: var(--neon-purple); background: rgba(188, 19, 254, 0.2); box-shadow: 0 0 10px rgba(188,19,254,0.3); }
         .week-completed-icon { color: var(--neon-green); font-size: 0.8rem; display: none; }
         .week-btn.completed .week-completed-icon { display: inline-block; text-shadow: 0 0 5px var(--neon-green); }
-        
         .day-nav { display: flex; justify-content: space-between; padding: 10px 15px; background: rgba(10,10,15,0.8); }
         .day-btn { background: transparent; border: none; color: #555; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; padding: 5px; position: relative; cursor: pointer; }
         .day-btn.active { color: var(--neon-blue); font-weight: bold; }
         .day-btn.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--neon-blue); box-shadow: 0 0 5px var(--neon-blue); }
-        /* Day Completed State */
         .day-btn.completed { color: var(--neon-green); }
         .day-btn.completed::after { background: var(--neon-green); box-shadow: 0 0 5px var(--neon-green); }
 
@@ -102,20 +100,18 @@
         .rest-badge { background: rgba(0, 247, 255, 0.1); color: var(--neon-blue); padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-family: 'Orbitron', sans-serif; white-space: nowrap; margin-left: 10px; }
         .ex-details { display: flex; gap: 15px; margin-bottom: 12px; font-size: 0.9rem; color: #888; border-bottom: 1px solid #222; padding-bottom: 8px; }
         .detail-item i { color: var(--neon-purple); margin-right: 5px; }
-        
+        .ex-notes-area { border-top: 1px solid #222; margin-top: 15px; padding-top: 10px; }
+        .ex-notes-static { font-size: 0.8rem; color: #666; font-style: italic; margin-bottom: 8px; }
+        .user-ex-note { width: 100%; background: transparent; border: none; border-bottom: 1px solid #444; color: #aaa; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; padding: 5px 0; transition: 0.3s; }
+        .user-ex-note:focus { outline: none; border-bottom-color: var(--neon-blue); color: white; }
+
         .warmup-section { background: rgba(255, 204, 0, 0.05); border: 1px dashed var(--neon-yellow); border-radius: 4px; padding: 10px; margin-bottom: 15px; }
         .warmup-header { font-size: 0.75rem; color: var(--neon-yellow); font-family: 'Orbitron', sans-serif; margin-bottom: 5px; }
-
         .sets-grid { display: flex; flex-wrap: wrap; gap: 8px; }
         .set-input-group { flex: 1; min-width: 70px; display: flex; flex-direction: column; }
         .set-input-group label { font-size: 0.7rem; color: #555; margin-bottom: 2px; text-align: center; }
         .weight-input { background: #000; border: 1px solid #444; color: var(--neon-green); padding: 8px; border-radius: 4px; width: 100%; font-size: 1rem; font-family: 'Orbitron', sans-serif; text-align: center; }
         .weight-input.warmup { color: var(--neon-yellow); border-color: #554400; }
-        
-        .ex-notes-area { border-top: 1px solid #222; margin-top: 15px; padding-top: 10px; }
-        .ex-notes-static { font-size: 0.8rem; color: #666; font-style: italic; margin-bottom: 8px; }
-        .user-ex-note { width: 100%; background: transparent; border: none; border-bottom: 1px solid #444; color: #aaa; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; padding: 5px 0; transition: 0.3s; }
-        .user-ex-note:focus { outline: none; border-bottom-color: var(--neon-blue); color: white; }
 
         .goals-card { background: var(--panel-bg); border: 1px solid var(--neon-purple); border-radius: 8px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; backdrop-filter: blur(5px); box-shadow: 0 0 10px rgba(188, 19, 254, 0.2); }
         .goal-item { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; text-align: center; }
@@ -125,19 +121,41 @@
         .goal-checkbox:checked { background: var(--neon-green); border-color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
         .goal-checkbox:checked::after { content: '✓'; position: absolute; color: black; font-weight: bold; font-size: 16px; top: -2px; left: 4px; }
 
+        /* --- CALENDAR & JOURNAL --- */
         .journal-container { display: flex; flex-direction: column; gap: 20px; }
-        .new-entry-card { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; backdrop-filter: blur(5px); }
-        .entry-textarea { width: 100%; background: #151520; border: 1px solid #333; color: white; padding: 10px; border-radius: 4px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; min-height: 100px; resize: vertical; margin-bottom: 10px; }
-        
+        .calendar-wrapper { background: var(--panel-bg); border: 1px solid var(--neon-blue); border-radius: 8px; padding: 15px; backdrop-filter: blur(5px); }
+        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-family: 'Orbitron', sans-serif; color: var(--neon-blue); }
+        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+        .cal-day-label { text-align: center; font-size: 0.7rem; color: #666; margin-bottom: 5px; }
+        .cal-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border-radius: 4px; cursor: pointer; font-size: 0.9rem; position: relative; transition: 0.2s; }
+        .cal-day:hover { background: rgba(0, 247, 255, 0.2); }
+        .cal-day.selected { border: 1px solid var(--neon-blue); background: rgba(0, 247, 255, 0.1); box-shadow: 0 0 5px var(--neon-blue); color: #fff; }
+        .cal-day.has-entry::after { content: ''; position: absolute; bottom: 4px; width: 4px; height: 4px; background: var(--neon-purple); border-radius: 50%; box-shadow: 0 0 4px var(--neon-purple); }
+        .cal-day.empty { background: transparent; cursor: default; }
+        .selected-date-display { text-align: center; font-family: 'Orbitron', sans-serif; color: white; margin: 10px 0; font-size: 1.1rem; }
+
+        .entry-list { display: flex; flex-direction: column-reverse; gap: 15px; max-height: 400px; overflow-y: auto; }
+        .journal-entry { background: rgba(14,14,18,0.9); border-left: 2px solid var(--neon-purple); padding: 15px; border-radius: 0 8px 8px 0; position: relative; }
+        .entry-content { color: #ccc; white-space: pre-wrap; line-height: 1.5; font-size: 0.95rem; }
+        .photo-gallery { display: flex; gap: 10px; overflow-x: auto; margin-top: 10px; padding-bottom: 5px; }
+        .photo-thumb { height: 80px; border-radius: 4px; border: 1px solid #444; cursor: pointer; }
+
+        /* PHOTO UPLOAD */
+        .photo-btn { background: #222; border: 1px dashed #555; color: #888; padding: 10px; width: 100%; border-radius: 4px; cursor: pointer; margin-bottom: 10px; text-align: center; }
+        .photo-btn:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+
+        .gratitude-section { border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; }
+        .gratitude-title { color: var(--neon-green); font-family: 'Orbitron', sans-serif; margin-bottom: 10px; font-size: 1rem; text-align: center; }
+        .gratitude-input { width: 100%; background: #111; border: 1px solid #333; padding: 10px; margin-bottom: 8px; color: #fff; border-radius: 4px; font-family: 'Rajdhani', sans-serif; }
+        .gratitude-input:focus { border-color: var(--neon-green); outline: none; }
+
         .save-btn { background: var(--neon-blue); color: #000; border: none; padding: 10px 20px; font-family: 'Orbitron', sans-serif; font-weight: bold; cursor: pointer; border-radius: 4px; width: 100%; transition: 0.3s; text-align: center; }
         .save-btn:hover { box-shadow: 0 0 15px var(--neon-blue); }
         .save-btn.active { background: var(--neon-green); box-shadow: 0 0 15px var(--neon-green); }
         .save-btn.inactive { background: #333; color: #888; box-shadow: none; }
 
-        .entry-list { display: flex; flex-direction: column-reverse; gap: 15px; }
-        .journal-entry { background: rgba(14,14,18,0.9); border-left: 2px solid var(--neon-purple); padding: 15px; border-radius: 0 8px 8px 0; }
-        .entry-date { color: var(--neon-purple); font-size: 0.8rem; margin-bottom: 5px; font-family: 'Orbitron', sans-serif; }
-        .entry-content { color: #ccc; white-space: pre-wrap; line-height: 1.5; }
+        .new-entry-card { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; backdrop-filter: blur(5px); }
+        .entry-textarea { width: 100%; background: #151520; border: 1px solid #333; color: white; padding: 10px; border-radius: 4px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; min-height: 100px; resize: vertical; margin-bottom: 10px; }
 
         /* TECH BUTTON */
         .tech-btn { position: relative; width: 100%; height: 4em; outline: none; transition: 0.1s; background-color: transparent; border: none; font-size: 13px; font-weight: bold; color: #ddebf0; cursor: pointer; margin-top: 10px; font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
@@ -172,7 +190,7 @@
     <div class="bg-animation"></div>
 
     <nav class="top-nav">
-        <div class="nav-brand">LOG <span>3000</span></div>
+        <div class="nav-brand">NEXUS <span>V12</span></div>
         <div class="nav-links nav-links-desktop">
             <button class="glitch-btn active" id="nav-tracker" data-text="WORKOUTS" onclick="switchView('tracker')">WORKOUTS</button>
             <button class="glitch-btn" id="nav-journal" data-text="JOURNAL" onclick="switchView('journal')">JOURNAL</button>
@@ -202,14 +220,40 @@
 
     <div id="view-journal" class="view-section">
         <div class="journal-container">
-            <h2 style="color:white; margin-bottom:10px; text-shadow: 0 0 5px var(--neon-blue);">PERSONAL LOG</h2>
-            <div class="new-entry-card">
-                <textarea id="journal-input" class="entry-textarea" placeholder="Log your thoughts..."></textarea>
-                <button class="save-btn" onclick="addJournalEntry()">ADD ENTRY</button>
+            <div class="calendar-wrapper">
+                <div class="calendar-header">
+                    <button class="week-btn" onclick="changeMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+                    <span id="cal-month-year" style="font-size:1.1rem; letter-spacing:1px;"></span>
+                    <button class="week-btn" onclick="changeMonth(1)"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+                <div class="calendar-grid" id="calendar-grid"></div>
             </div>
+
+            <div class="selected-date-display" id="selected-date-display">SELECT A DATE</div>
+
+            <div class="new-entry-card">
+                <textarea id="journal-input" class="entry-textarea" placeholder="Log entry for selected date..."></textarea>
+                
+                <button class="photo-btn" onclick="document.getElementById('photo-input').click()">
+                    <i class="fa-solid fa-camera"></i> UPLOAD PROGRESS PHOTO
+                </button>
+                <input type="file" id="photo-input" style="display:none" accept="image/*" onchange="handlePhotoUpload(this)">
+                
+                <button class="save-btn" onclick="addJournalEntry()">ADD LOG ENTRY</button>
+            </div>
+
             <div class="entry-list" id="journal-list"></div>
+
+            <div class="gratitude-section">
+                <div class="gratitude-title">GRATITUDE ARCHIVE</div>
+                <input type="text" class="gratitude-input" id="grat-1" placeholder="1. I am grateful for..." oninput="saveGratitude()">
+                <input type="text" class="gratitude-input" id="grat-2" placeholder="2. I am grateful for..." oninput="saveGratitude()">
+                <input type="text" class="gratitude-input" id="grat-3" placeholder="3. I am grateful for..." oninput="saveGratitude()">
+            </div>
+
             <div style="margin-top:40px; border-top:1px solid #333; padding-top:20px;">
                 <h3 style="color:#666; font-size:0.9rem; margin-bottom:10px;">DATA MANAGEMENT</h3>
+                <p style="color:#444; font-size:0.7rem;">Note: Photos are stored locally on your device. Clearing browser data will delete them.</p>
                 <button class="tech-btn" onclick="exportData()">
                     BACKUP DATA
                     <div id="clip"><div id="leftTop" class="corner"></div><div id="rightBottom" class="corner"></div><div id="rightTop" class="corner"></div><div id="leftBottom" class="corner"></div></div>
@@ -225,56 +269,46 @@
     </div>
 
     <script>
-        // --- LOGIC ---
+        // --- INDEXED DB SETUP (For Photos) ---
+        let db;
+        const DB_NAME = 'NexusDB';
+        const STORE_NAME = 'photos';
+
+        function initDB() {
+            const request = indexedDB.open(DB_NAME, 1);
+            request.onupgradeneeded = function(e) {
+                db = e.target.result;
+                if(!db.objectStoreNames.contains(STORE_NAME)) {
+                    db.createObjectStore(STORE_NAME, { keyPath: 'id', autoIncrement: true });
+                }
+            };
+            request.onsuccess = function(e) {
+                db = e.target.result;
+                console.log("DB Open");
+            };
+            request.onerror = function(e) { console.error("DB Error", e); };
+        }
+        initDB();
+
+        // --- APP LOGIC ---
         let currentWeek = 1; let currentDay = 1; let currentView = 'tracker';
-        
+        let calDate = new Date();
+        let selectedDateKey = new Date().toISOString().split('T')[0];
+
         const plan = {
-            1: { title: "UPPER BODY (POWER)", exercises: [ 
-                { name: "Incline Press (DB if available)", isCompound: true, sets: 4, reps: "6-8", rest: "3:00", notes: "Heavy Compound" }, 
-                { name: "Weighted Pull-ups/Lat Pulldown", isCompound: true, sets: 3, reps: "6-8", rest: "2:30", notes: "Heavy Compound" }, 
-                { name: "Seated Overhead Press (DB if available)", isCompound: true, sets: 3, reps: "6-8", rest: "2:30", notes: "Heavy Compound" }, 
-                { name: "Chest Supported Row", isCompound: true, sets: 3, reps: "8-10", rest: "90s", notes: "Volume Compound" }, 
-                { name: "Barbell Bicep Curl", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, 
-                { name: "Overhead Cable Tricep Ext", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, 
-                { name: "Neck Ext/Flexion", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point" } 
-            ] },
-            2: { title: "LOWER BODY (POWER)", exercises: [ 
-                { name: "Hack Squat/Leg Press/BB Squat", isCompound: true, sets: 3, reps: "6-8", rest: "3:00", notes: "Heavy Compound" }, 
-                { name: "Romanian Deadlift (RDL)", isCompound: true, sets: 3, reps: "8-10", rest: "2:30", notes: "Heavy Compound" }, 
-                { name: "Leg Press (High/Wide)", sets: 3, reps: "8-10", rest: "90s", notes: "Volume Compound" }, 
-                { name: "Hamstring Curl", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, 
-                { name: "Standing Calf Raise", sets: 4, reps: "8-12", rest: "45s", notes: "Weak Point" }, 
-                { name: "Weighted Farmers Walk", sets: 3, reps: "40-60ft", rest: "45s", notes: "Weak Point / Grip" } 
-            ] },
+            1: { title: "UPPER BODY (POWER)", exercises: [ { name: "Incline Press (DB if available)", isCompound: true, sets: 4, reps: "6-8", rest: "3:00", notes: "Heavy Compound" }, { name: "Weighted Pull-ups / Lat Pulldown", isCompound: true, sets: 3, reps: "6-8", rest: "2:30", notes: "Heavy Compound" }, { name: "Seated DB Overhead Press", isCompound: true, sets: 3, reps: "6-8", rest: "2:30", notes: "Heavy Compound" }, { name: "Chest Supported Row", isCompound: true, sets: 3, reps: "8-10", rest: "90s", notes: "Volume Compound" }, { name: "Barbell Bicep Curl", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, { name: "Overhead Cable Tricep Ext", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, { name: "Neck Ext/Flexion", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point" } ] },
+            2: { title: "LOWER BODY (POWER)", exercises: [ { name: "Hack Squat/Leg Press/BB Squat", isCompound: true, sets: 3, reps: "6-8", rest: "3:00", notes: "Heavy Compound" }, { name: "Romanian Deadlift (RDL)", isCompound: true, sets: 3, reps: "8-10", rest: "2:30", notes: "Heavy Compound" }, { name: "Leg Press (High/Wide)", sets: 3, reps: "8-10", rest: "90s", notes: "Volume Compound" }, { name: "Lying Hamstring Curl", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, { name: "Standing Calf Raise", sets: 4, reps: "8-12", rest: "45s", notes: "Weak Point" }, { name: "Weighted Farmers Walk", sets: 3, reps: "40-60ft", rest: "45s", notes: "Weak Point / Grip" } ] },
             3: { type: "rest", title: "SYSTEM RECHARGE", desc: "Critical Recovery Protocol Active." },
-            4: { title: "PUSH (HYPERTROPHY)", exercises: [ 
-                { name: "Flat Press (DB if available)", isCompound: true, sets: 3, reps: "10-12", rest: "3:00", notes: "Heavy Compound" }, 
-                { name: "Incline Cable Fly", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, 
-                { name: "Cable Lateral Raise SS/Cable Front Raise", sets: 4, reps: "12-15", rest: "60s", notes: "Isolation" }, 
-                { name: "Pec-Deck Fly", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, 
-                { name: "Rope Overhead Tricep Ext", sets: 4, reps: "12-15", rest: "60s", notes: "Isolation" }, 
-                { name: "Single-Arm Cable Pushdown", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" } 
-            ] },
-            5: { title: "PULL (HYPERTROPHY)", exercises: [ 
-                { name: "Wide-Grip Lat Pulldown", isCompound: true, sets: 3, reps: "10-12", rest: "90s", notes: "Volume Compound" }, 
-                { name: "Chest-Supported DB Row", isCompound: true, sets: 3, reps: "10-12", rest: "90s", notes: "Volume Compound" }, 
-                { name: "Face Pull", sets: 4, reps: "15-20", rest: "60s", notes: "Isolation" }, 
-                { name: "Reverse Pec-Deck Fly", sets: 4, reps: "15-20", rest: "60s", notes: "Isolation" }, 
-                { name: "High Cable Bicep Curl", sets: 4, reps: "10-12", rest: "60s", notes: "Isolation" }, 
-                { name: "Hammer Curl", sets: 3, reps: "10-12", rest: "60s", notes: "Isolation" }, 
-                { name: "Barbell Wrist Curl", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point" } 
-            ] },
-            6: { title: "LEGS (HYPERTROPHY)", exercises: [ 
-                { name: "Leg Extension (Last set Dropset)", sets: 3, reps: "15-20", rest: "60s", notes: "Isolation / Pre-exhaust" }, 
-                { name: "Single-Leg Leg Press", isCompound: true, sets: 3, reps: "12-15", rest: "90s", notes: "Volume Compound" }, 
-                { name: "Hamstring Curl", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, 
-                { name: "Hip Abduction Machine", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point / Glutes" }, 
-                { name: "Seated Calf Raise", sets: 5, reps: "15-20", rest: "45s", notes: "Weak Point" } 
-            ] },
+            4: { title: "PUSH (HYPERTROPHY)", exercises: [ { name: "Flat Press (DB if available)", isCompound: true, sets: 3, reps: "10-12", rest: "3:00", notes: "Heavy Compound" }, { name: "Incline Cable Fly", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Cable Lateral Raise SS/Cable Front Raise", sets: 4, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Pec-Deck Fly", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Rope Overhead Tricep Ext", sets: 4, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Single-Arm Cable Pushdown", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" } ] },
+            5: { title: "PULL (HYPERTROPHY)", exercises: [ { name: "Wide-Grip Lat Pulldown", isCompound: true, sets: 3, reps: "10-12", rest: "90s", notes: "Volume Compound" }, { name: "Chest-Supported Row", isCompound: true, sets: 3, reps: "10-12", rest: "90s", notes: "Volume Compound" }, { name: "Face Pull", sets: 4, reps: "15-20", rest: "60s", notes: "Isolation" }, { name: "Reverse Pec-Deck Fly", sets: 4, reps: "15-20", rest: "60s", notes: "Isolation" }, { name: "High Cable Bicep Curl", sets: 4, reps: "10-12", rest: "60s", notes: "Isolation" }, { name: "Hammer Curl", sets: 3, reps: "10-12", rest: "60s", notes: "Isolation" }, { name: "Barbell Wrist Curl", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point" } ] },
+            6: { title: "LEGS (HYPERTROPHY)", exercises: [ { name: "Leg Extension (Dropset last set)", sets: 3, reps: "15-20", rest: "60s", notes: "Isolation / Pre-exhaust" }, { name: "Single-Leg Leg Press", isCompound: true, sets: 3, reps: "12-15", rest: "90s", notes: "Volume Compound" }, { name: "Seated Hamstring Curl", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Hip Abduction Machine", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point / Glutes" }, { name: "Seated Calf Raise", sets: 5, reps: "15-20", rest: "45s", notes: "Weak Point" } ] },
             7: { type: "rest", title: "SYSTEM RECHARGE", desc: "Full System Reset & Growth.", isDay7: true }
         };
 
-        window.onload = function() { renderWeeks(); loadState(); renderTracker(); renderJournal(); };
+        window.onload = function() { 
+            renderWeeks(); loadState(); renderTracker(); 
+            initCalendar(); 
+        };
 
         function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
         function switchView(view) {
@@ -283,8 +317,10 @@
             document.getElementById(`view-${view}`).classList.add('active-view');
             document.querySelectorAll('.glitch-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(`nav-${view}`).classList.add('active');
+            if(view === 'journal') setTimeout(renderCalendar, 100);
         }
 
+        // --- TRACKER LOGIC ---
         function renderWeeks() {
             const container = document.getElementById('week-scroller');
             let html = '';
@@ -295,7 +331,6 @@
             }
             container.innerHTML = html;
         }
-
         function setWeek(w) { currentWeek = w; saveState(); renderWeeks(); renderTracker(); }
         function setDay(d) { currentDay = d; saveState(); document.querySelectorAll('.day-btn').forEach((btn, i) => btn.classList.toggle('active', i+1 === d)); renderTracker(); }
 
@@ -305,7 +340,6 @@
             const prefix = `nexus_w${currentWeek}_d${currentDay}`;
             const isCompleted = localStorage.getItem(`${prefix}_completed`) === 'true';
             
-            // --- REST DAY VIEW ---
             if (data.type === 'rest') {
                 let completeBtnHtml = '';
                 if(data.isDay7) {
@@ -318,7 +352,6 @@
                 return;
             }
 
-            // --- WORKOUT VIEW ---
             let html = '';
             const dateKey = `${prefix}_date`; const timeKey = `${prefix}_time`; const noteKey = `${prefix}_note`;
             const savedDate = localStorage.getItem(dateKey) || ""; const savedTime = localStorage.getItem(timeKey) || ""; const savedNote = localStorage.getItem(noteKey) || "";
@@ -342,36 +375,20 @@
                     }
                     warmupHtml = `<div class="warmup-section"><div class="warmup-header"><i class="fa-solid fa-fire"></i> WARM UP</div><div class="sets-grid">${inputs}</div></div>`;
                 }
-
                 let setsHtml = '';
                 for(let s=0; s<ex.sets; s++) {
                     const k = `${prefix}_ex${index}_set${s}`;
                     const v = localStorage.getItem(k) || "";
                     setsHtml += `<div class="set-input-group"><label>SET ${s+1}</label><input type="text" class="weight-input" placeholder="lbs" value="${v}" inputmode="decimal" oninput="saveData('${k}', this.value)"></div>`;
                 }
-
-                // NEW: Per-exercise user note
                 const userNoteKey = `${prefix}_ex${index}_usernote`;
                 const savedUserNote = localStorage.getItem(userNoteKey) || "";
-
-                html += `
-                    <div class="ex-card">
-                        <div class="ex-header"><div class="ex-title">${ex.name}</div><div class="rest-badge"><i class="fa-regular fa-clock"></i> ${ex.rest}</div></div>
-                        <div class="ex-details"><div class="detail-item"><i class="fa-solid fa-layer-group"></i> ${ex.sets} Sets</div><div class="detail-item"><i class="fa-solid fa-rotate"></i> ${ex.reps} Reps</div></div>
-                        ${warmupHtml}
-                        <div class="sets-grid" style="margin-top:10px;">${setsHtml}</div>
-                        <div class="ex-notes-area">
-                            <div class="ex-notes-static">${ex.notes}</div>
-                            <input type="text" class="user-ex-note" placeholder="Your notes (e.g. seat setting)..." value="${savedUserNote}" oninput="saveData('${userNoteKey}', this.value)">
-                        </div>
-                    </div>`;
+                html += `<div class="ex-card"><div class="ex-header"><div class="ex-title">${ex.name}</div><div class="rest-badge"><i class="fa-regular fa-clock"></i> ${ex.rest}</div></div><div class="ex-details"><div class="detail-item"><i class="fa-solid fa-layer-group"></i> ${ex.sets} Sets</div><div class="detail-item"><i class="fa-solid fa-rotate"></i> ${ex.reps} Reps</div></div>${warmupHtml}<div class="sets-grid" style="margin-top:10px;">${setsHtml}</div><div class="ex-notes-area"><div class="ex-notes-static">${ex.notes}</div><input type="text" class="user-ex-note" placeholder="Your notes (e.g. seat setting)..." value="${savedUserNote}" oninput="saveData('${userNoteKey}', this.value)"></div></div>`;
             });
 
-            // WORKOUT COMPLETE BUTTON
             const btnText = isCompleted ? "WORKOUT COMPLETE (UNDO)" : "COMPLETE WORKOUT";
             const btnClass = isCompleted ? "inactive" : "active";
             html += `<button class="save-btn ${btnClass}" style="margin-top:20px; width:100%; height:50px; font-size:1.1rem;" onclick="toggleWorkoutComplete()">${btnText}</button>`;
-
             container.innerHTML = html;
         }
 
@@ -380,71 +397,179 @@
             const isComplete = localStorage.getItem(`${prefix}_completed`) === 'true';
             localStorage.setItem(`${prefix}_completed`, !isComplete);
             renderTracker();
-            // Update day nav style
-            document.querySelectorAll('.day-btn').forEach((btn, i) => {
-                if(i+1 === currentDay) btn.classList.toggle('completed', !isComplete);
-            });
+            document.querySelectorAll('.day-btn').forEach((btn, i) => { if(i+1 === currentDay) btn.classList.toggle('completed', !isComplete); });
         }
-
         function toggleWeekComplete(weekNum) {
             const isComplete = localStorage.getItem(`nexus_week_complete_${weekNum}`) === 'true';
             localStorage.setItem(`nexus_week_complete_${weekNum}`, !isComplete);
-            renderWeeks();
-            renderTracker(); // re-render to update button text
+            renderWeeks(); renderTracker();
         }
 
-        function renderJournal() {
-            const list = document.getElementById('journal-list');
-            const entries = JSON.parse(localStorage.getItem('nexus_journal') || "[]");
-            if (entries.length === 0) { list.innerHTML = `<div style="text-align:center; color:#555; padding:20px;">No entries yet. Start writing...</div>`; return; }
+        // --- CALENDAR & JOURNAL ---
+        function initCalendar() { renderCalendar(); selectDate(new Date().toISOString().split('T')[0]); }
+        function changeMonth(delta) { calDate.setMonth(calDate.getMonth() + delta); renderCalendar(); }
+        function renderCalendar() {
+            const year = calDate.getFullYear(); const month = calDate.getMonth();
+            const firstDay = new Date(year, month, 1).getDay();
+            const daysInMonth = new Date(year, month + 1, 0).getDate();
+            const grid = document.getElementById('calendar-grid');
+            const monthName = calDate.toLocaleString('default', { month: 'long' });
+            document.getElementById('cal-month-year').innerText = `${monthName.toUpperCase()} ${year}`;
             let html = '';
-            entries.forEach(entry => { html += `<div class="journal-entry"><div class="entry-date">${entry.date}</div><div class="entry-content">${entry.text}</div></div>`; });
-            list.innerHTML = html;
+            const days = ['S','M','T','W','T','F','S'];
+            days.forEach(d => html += `<div class="cal-day-label">${d}</div>`);
+            for(let i=0; i<firstDay; i++) { html += `<div class="cal-day empty"></div>`; }
+            for(let d=1; d<=daysInMonth; d++) {
+                const dateString = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
+                const hasEntry = checkDataExists(dateString);
+                const hasEntryClass = hasEntry ? 'has-entry' : '';
+                const selectedClass = dateString === selectedDateKey ? 'selected' : '';
+                html += `<div class="cal-day ${hasEntryClass} ${selectedClass}" onclick="selectDate('${dateString}')">${d}</div>`;
+            }
+            grid.innerHTML = html;
+        }
+        function checkDataExists(dateStr) {
+            const entries = JSON.parse(localStorage.getItem(`nexus_journal_${dateStr}`) || "[]");
+            const grat = JSON.parse(localStorage.getItem(`nexus_gratitude_${dateStr}`) || "[]");
+            // Also check for photos in IndexedDB? (Async, hard to do in sync render). 
+            // Simplified: Checking text entries for now.
+            return entries.length > 0 || grat.length > 0;
+        }
+        function selectDate(dateStr) {
+            selectedDateKey = dateStr;
+            renderCalendar();
+            const dateObj = new Date(dateStr + 'T00:00:00');
+            document.getElementById('selected-date-display').innerText = dateObj.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase();
+            loadJournalEntries(dateStr);
+            loadGratitude(dateStr);
         }
 
+        // --- PHOTO HANDLING ---
+        function handlePhotoUpload(input) {
+            if (input.files && input.files[0]) {
+                const file = input.files[0];
+                // COMPRESS IMAGE
+                const reader = new FileReader();
+                reader.readAsDataURL(file);
+                reader.onload = function(event) {
+                    const img = new Image();
+                    img.src = event.target.result;
+                    img.onload = function() {
+                        const canvas = document.createElement('canvas');
+                        const MAX_WIDTH = 800; 
+                        const scaleSize = MAX_WIDTH / img.width;
+                        canvas.width = MAX_WIDTH;
+                        canvas.height = img.height * scaleSize;
+                        const ctx = canvas.getContext('2d');
+                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+                        
+                        // Convert to compressed Base64
+                        const dataUrl = canvas.toDataURL('image/jpeg', 0.7); 
+                        savePhotoToDB(selectedDateKey, dataUrl);
+                    }
+                }
+            }
+        }
+
+        function savePhotoToDB(date, dataUrl) {
+            if(!db) return;
+            const transaction = db.transaction([STORE_NAME], 'readwrite');
+            const store = transaction.objectStore(STORE_NAME);
+            const entry = { date: date, image: dataUrl, timestamp: new Date().getTime() };
+            store.add(entry);
+            transaction.oncomplete = function() {
+                loadJournalEntries(date); // Refresh list to show photo
+            };
+        }
+
+        // --- JOURNAL ENTRIES ---
         function addJournalEntry() {
             const input = document.getElementById('journal-input'); const text = input.value.trim();
             if (!text) return;
-            const entries = JSON.parse(localStorage.getItem('nexus_journal') || "[]");
-            const now = new Date(); const dateStr = now.toLocaleDateString() + ' ' + now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            entries.push({ date: dateStr, text: text });
-            localStorage.setItem('nexus_journal', JSON.stringify(entries));
-            input.value = ""; renderJournal();
+            const entries = JSON.parse(localStorage.getItem(`nexus_journal_${selectedDateKey}`) || "[]");
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            entries.push({ time: timeStr, text: text });
+            localStorage.setItem(`nexus_journal_${selectedDateKey}`, JSON.stringify(entries));
+            input.value = ""; loadJournalEntries(selectedDateKey); renderCalendar();
         }
 
+        function loadJournalEntries(dateStr) {
+            const list = document.getElementById('journal-list');
+            list.innerHTML = '';
+
+            // 1. Load Text Entries
+            const entries = JSON.parse(localStorage.getItem(`nexus_journal_${dateStr}`) || "[]");
+            entries.forEach(entry => { 
+                list.innerHTML += `<div class="journal-entry"><div class="entry-date">${entry.time}</div><div class="entry-content">${entry.text}</div></div>`; 
+            });
+
+            // 2. Load Photos from IndexedDB
+            if(db) {
+                const transaction = db.transaction([STORE_NAME], 'readonly');
+                const store = transaction.objectStore(STORE_NAME);
+                const request = store.getAll();
+                request.onsuccess = function(e) {
+                    const photos = e.target.result;
+                    const daysPhotos = photos.filter(p => p.date === dateStr);
+                    if(daysPhotos.length > 0) {
+                        let galleryHtml = '<div class="photo-gallery">';
+                        daysPhotos.forEach(p => {
+                            galleryHtml += `<img src="${p.image}" class="photo-thumb" onclick="alert('Full size view not implemented in V12')">`;
+                        });
+                        galleryHtml += '</div>';
+                        list.innerHTML = galleryHtml + list.innerHTML;
+                    }
+                };
+            }
+            
+            if (entries.length === 0) list.innerHTML += `<div style="text-align:center; color:#555; padding:20px;">No text entries for this date.</div>`;
+        }
+
+        function saveGratitude() {
+            const g1 = document.getElementById('grat-1').value;
+            const g2 = document.getElementById('grat-2').value;
+            const g3 = document.getElementById('grat-3').value;
+            localStorage.setItem(`nexus_gratitude_${selectedDateKey}`, JSON.stringify([g1,g2,g3]));
+            renderCalendar();
+        }
+        function loadGratitude(dateStr) {
+            const data = JSON.parse(localStorage.getItem(`nexus_gratitude_${dateStr}`) || "[\"\", \"\", \"\"]");
+            document.getElementById('grat-1').value = data[0] || "";
+            document.getElementById('grat-2').value = data[1] || "";
+            document.getElementById('grat-3').value = data[2] || "";
+        }
+
+        // --- SYSTEM UTILS ---
         function saveData(key, value) { localStorage.setItem(key, value); }
         function saveState() { localStorage.setItem('nexus_current_week', currentWeek); localStorage.setItem('nexus_current_day', currentDay); }
         function loadState() {
             currentWeek = parseInt(localStorage.getItem('nexus_current_week') || 1);
             currentDay = parseInt(localStorage.getItem('nexus_current_day') || 1);
-            // Check day completions to color nav
             document.querySelectorAll('.day-btn').forEach((btn, i) => {
                 btn.classList.toggle('active', i+1 === currentDay);
-                if(localStorage.getItem(`nexus_w${currentWeek}_d${i+1}_completed`) === 'true') {
-                    btn.classList.add('completed');
-                } else {
-                    btn.classList.remove('completed');
-                }
+                if(localStorage.getItem(`nexus_w${currentWeek}_d${i+1}_completed`) === 'true') btn.classList.add('completed');
+                else btn.classList.remove('completed');
             });
         }
 
         function exportData() {
+            // Note: This only exports LocalStorage (Text). IndexedDB export is complex for a single file.
             const data = JSON.stringify(localStorage);
             const blob = new Blob([data], {type: "application/json"});
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a'); a.href = url; a.download = `nexus_backup_${new Date().toISOString().slice(0,10)}.json`; a.click();
+            alert("Backup downloaded. Note: Photos are NOT included in this JSON backup file due to size limitations.");
         }
 
         function importData(input) {
-            const file = input.files[0];
-            if (!file) return;
+            const file = input.files[0]; if (!file) return;
             const reader = new FileReader();
             reader.onload = function(e) {
                 try {
                     const data = JSON.parse(e.target.result);
                     Object.keys(data).forEach(key => { localStorage.setItem(key, data[key]); });
-                    alert('SYSTEM RESTORE SUCCESSFUL. REBOOTING...');
-                    location.reload();
+                    alert('SYSTEM RESTORE SUCCESSFUL. REBOOTING...'); location.reload();
                 } catch(err) { alert('DATA CORRUPT. RESTORE FAILED.'); }
             };
             reader.readAsText(file);
