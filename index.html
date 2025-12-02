@@ -6,7 +6,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="theme-color" content="#000000">
-    <title>Workout Log</title>
+    <title>NEXUS | PURE BODYBUILDING PPL</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;500;700&display=swap" rel="stylesheet">
 
@@ -14,10 +14,11 @@
         :root {
             --neon-blue: #00f7ff;
             --neon-purple: #bc13fe;
+            --neon-red: #ff9500;
             --neon-green: #0aff0a;
             --neon-yellow: #ffcc00;
-            --panel-bg: rgba(10, 10, 15, 0.9);
-            --input-bg: rgba(0, 0, 0, 0.6);
+            --panel-bg: rgba(10, 10, 15, 0.95);
+            --input-bg: rgba(0, 0, 0, 0.8);
             --border-color: #333;
             --text-main: #e0e0e0;
         }
@@ -30,550 +31,651 @@
             font-family: 'Rajdhani', sans-serif;
             margin: 0;
             padding: 0;
-            padding-bottom: 100px;
+            padding-bottom: 120px;
             overflow-x: hidden;
         }
 
         /* --- BACKGROUND ANIMATION --- */
         .bg-animation {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none;
-            --c: #09f;
-            background-color: #000;
-            background-image: radial-gradient(4px 100px at 0px 235px, var(--c), #0000), radial-gradient(4px 100px at 300px 235px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 117.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 252px, var(--c), #0000), radial-gradient(4px 100px at 300px 252px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 126px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 150px, var(--c), #0000), radial-gradient(4px 100px at 300px 150px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 75px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 253px, var(--c), #0000), radial-gradient(4px 100px at 300px 253px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 126.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 204px, var(--c), #0000), radial-gradient(4px 100px at 300px 204px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 102px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 134px, var(--c), #0000), radial-gradient(4px 100px at 300px 134px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 67px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 179px, var(--c), #0000), radial-gradient(4px 100px at 300px 179px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 89.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 299px, var(--c), #0000), radial-gradient(4px 100px at 300px 299px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 149.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 215px, var(--c), #0000), radial-gradient(4px 100px at 300px 215px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 107.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 281px, var(--c), #0000), radial-gradient(4px 100px at 300px 281px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 140.5px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 158px, var(--c), #0000), radial-gradient(4px 100px at 300px 158px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 79px, var(--c) 100%, #0000 150%), radial-gradient(4px 100px at 0px 210px, var(--c), #0000), radial-gradient(4px 100px at 300px 210px, var(--c), #0000), radial-gradient(1.5px 1.5px at 150px 105px, var(--c) 100%, #0000 150%);
-            background-size: 300px 235px, 300px 235px, 300px 235px, 300px 252px, 300px 252px, 300px 252px, 300px 150px, 300px 150px, 300px 150px, 300px 253px, 300px 253px, 300px 253px, 300px 204px, 300px 204px, 300px 204px, 300px 134px, 300px 134px, 300px 134px, 300px 179px, 300px 179px, 300px 179px, 300px 299px, 300px 299px, 300px 299px, 300px 215px, 300px 215px, 300px 215px, 300px 281px, 300px 281px, 300px 281px, 300px 158px, 300px 158px, 300px 158px, 300px 210px, 300px 210px, 300px 210px;
-            animation: hi 150s linear infinite;
+            background: 
+                radial-gradient(circle at 15% 50%, rgba(188, 19, 254, 0.05), transparent 25%), 
+                radial-gradient(circle at 85% 30%, rgba(0, 247, 255, 0.05), transparent 25%);
+            animation: pulseBg 10s ease-in-out infinite alternate;
         }
-        .bg-animation::after { content: ""; position: absolute; inset: 0; z-index: 1; backdrop-filter: blur(1em) brightness(6); background-image: radial-gradient(circle at 50% 50%, #0000 0, #0000 2px, hsl(0 0 4%) 2px); background-size: 8px 8px; opacity: 0.5; }
-        @keyframes hi { 0% { background-position: 0px 220px, 3px 220px, 151.5px 337.5px; } to { background-position: 0px 6800px, 3px 6800px, 151.5px 6917.5px; } }
+        .grid-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
+            background-image: 
+                linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
 
         /* --- NAVBAR --- */
         nav.top-nav {
-            background: rgba(0,0,0,0.9); border-bottom: 1px solid var(--border-color);
+            background: rgba(0,0,0,0.95); border-bottom: 1px solid var(--neon-blue);
             padding: 0 20px; height: 70px;
             position: sticky; top: 0; z-index: 200; backdrop-filter: blur(10px);
             display: flex; justify-content: space-between; align-items: center;
+            box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
         }
-        .nav-brand { font-family: 'Orbitron', sans-serif; font-weight: 700; color: #fff; font-size: 1.4rem; }
-        .nav-brand span { color: var(--neon-blue); }
-        .nav-links-desktop { display: flex; gap: 15px; }
-        .mobile-menu-btn { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
-        .mobile-dropdown { display: none; position: absolute; top: 70px; left: 0; width: 100%; background: rgba(10, 10, 15, 0.98); border-bottom: 1px solid var(--neon-blue); flex-direction: column; padding: 20px; gap: 15px; z-index: 199; }
-        .mobile-dropdown.open { display: flex; animation: slideDown 0.3s ease; }
-        @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        @media (max-width: 768px) { .nav-links-desktop { display: none; } .mobile-menu-btn { display: block; } }
-
-        /* GLITCH BUTTON */
-        .glitch-btn { padding: 10px 25px; font-size: 0.9rem; border: none; border-radius: 5px; color: white; background-color: transparent; position: relative; font-family: 'Orbitron', sans-serif; cursor: pointer; width: 100%; }
-        .glitch-btn::after { --move1: inset(50% 50% 50% 50%); --move2: inset(31% 0 40% 0); --move3: inset(39% 0 15% 0); --move4: inset(45% 0 40% 0); --move5: inset(45% 0 6% 0); --move6: inset(14% 0 61% 0); clip-path: var(--move1); content: attr(data-text); position: absolute; top: 0; left: 0; right: 0; bottom: 0; display: block; }
-        .glitch-btn:hover::after, .glitch-btn.active::after { animation: glitch_4011 1s; text-shadow: 10 10px 10px black; animation-timing-function: steps(2, end); text-shadow: -3px -3px 0px #1df2f0, 3px 3px 0px #E94BE8; background-color: transparent; border: 2px solid rgb(0, 255, 213); }
-        .glitch-btn:hover, .glitch-btn.active { text-shadow: -1px -1px 0px #1df2f0, 1px 1px 0px #E94BE8; background-color: transparent; border: 1px solid rgb(0, 255, 213); box-shadow: 0px 10px 10px -10px rgb(0, 255, 213); }
-        @keyframes glitch_4011 { 0% { clip-path: var(--move1); transform: translate(0px,-10px); } 10% { clip-path: var(--move2); transform: translate(-10px,10px); } 100% { clip-path: var(--move1); transform: translate(0); } }
-
-        /* --- SCROLLERS --- */
-        .scroller-container { position: sticky; top: 70px; z-index: 100; background: rgba(5,5,5,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid var(--border-color); }
-        .week-nav { display: flex; overflow-x: auto; gap: 10px; padding: 10px 15px; scrollbar-width: none; border-bottom: 1px solid #222; }
-        .week-btn { background: rgba(0,0,0,0.5); border: 1px solid #444; color: #888; padding: 6px 14px; border-radius: 20px; font-family: 'Orbitron', sans-serif; font-size: 0.75rem; white-space: nowrap; transition: 0.3s; display: flex; align-items: center; gap: 5px; }
-        .week-btn.active { border-color: var(--neon-purple); color: var(--neon-purple); background: rgba(188, 19, 254, 0.2); box-shadow: 0 0 10px rgba(188,19,254,0.3); }
-        .week-completed-icon { color: var(--neon-green); font-size: 0.8rem; display: none; }
-        .week-btn.completed .week-completed-icon { display: inline-block; text-shadow: 0 0 5px var(--neon-green); }
-        .day-nav { display: flex; justify-content: space-between; padding: 10px 15px; background: rgba(10,10,15,0.8); }
-        .day-btn { background: transparent; border: none; color: #555; font-family: 'Orbitron', sans-serif; font-size: 0.9rem; padding: 5px; position: relative; cursor: pointer; }
-        .day-btn.active { color: var(--neon-blue); font-weight: bold; }
-        .day-btn.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--neon-blue); box-shadow: 0 0 5px var(--neon-blue); }
-        .day-btn.completed { color: var(--neon-green); }
-        .day-btn.completed::after { background: var(--neon-green); box-shadow: 0 0 5px var(--neon-green); }
-
-        .view-section { display: none; padding: 15px; max-width: 600px; margin: 0 auto; }
-        .view-section.active-view { display: block; }
+        .nav-brand { font-family: 'Orbitron', sans-serif; font-weight: 700; color: #fff; font-size: 1.2rem; letter-spacing: 2px; }
+        .nav-brand span { color: var(--neon-red); }
         
-        /* --- CARDS & INPUTS --- */
-        .meta-card { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; backdrop-filter: blur(5px); }
-        .meta-row { display: flex; gap: 10px; }
-        .meta-group { flex: 1; }
-        .meta-group label { font-size: 0.75rem; color: var(--neon-blue); display: block; margin-bottom: 5px; font-family: 'Orbitron', sans-serif; }
-        .meta-input { width: 100%; background: var(--input-bg); border: 1px solid #333; color: white; padding: 10px; border-radius: 4px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; }
-        .meta-input[type="date"] { color-scheme: dark; }
+        /* --- SCROLLERS --- */
+        .scroller-container { position: sticky; top: 70px; z-index: 100; background: rgba(0,0,0,0.9); backdrop-filter: blur(10px); border-bottom: 1px solid #222; }
+        .cycle-nav { padding: 10px 15px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; }
+        .cycle-label { font-family: 'Orbitron', sans-serif; color: var(--neon-purple); font-size: 0.9rem; }
+        
+        .day-nav { display: flex; overflow-x: auto; gap: 8px; padding: 10px 15px; scrollbar-width: none; background: rgba(10,10,15,0.8); }
+        .day-btn { 
+            background: #111; border: 1px solid #333; color: #666; 
+            min-width: 45px; height: 45px; display: flex; align-items: center; justify-content: center;
+            font-family: 'Orbitron', sans-serif; font-size: 0.8rem; border-radius: 4px;
+            transition: 0.3s; flex-shrink: 0;
+        }
+        .day-btn.active { border-color: var(--neon-blue); color: #fff; background: rgba(0, 247, 255, 0.1); box-shadow: 0 0 10px rgba(0, 247, 255, 0.2); }
+        .day-btn.completed { border-color: var(--neon-green); color: var(--neon-green); }
+        .day-btn.rest { border-color: #555; color: #888; }
+        .day-btn.rest.active { border-color: #fff; color: #fff; }
 
-        .ex-card { background: var(--panel-bg); border-left: 3px solid var(--neon-blue); border-radius: 6px; padding: 15px; margin-bottom: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.5); backdrop-filter: blur(5px); }
-        .ex-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
-        .ex-title { font-size: 1.1rem; font-weight: 700; color: #fff; line-height: 1.2; }
-        .rest-badge { background: rgba(0, 247, 255, 0.1); color: var(--neon-blue); padding: 4px 8px; border-radius: 4px; font-size: 0.75rem; font-family: 'Orbitron', sans-serif; white-space: nowrap; margin-left: 10px; }
-        .ex-details { display: flex; gap: 15px; margin-bottom: 12px; font-size: 0.9rem; color: #888; border-bottom: 1px solid #222; padding-bottom: 8px; }
-        .detail-item i { color: var(--neon-purple); margin-right: 5px; }
-        .ex-notes-area { border-top: 1px solid #222; margin-top: 15px; padding-top: 10px; }
-        .ex-notes-static { font-size: 0.8rem; color: #666; font-style: italic; margin-bottom: 8px; }
-        .user-ex-note { width: 100%; background: transparent; border: none; border-bottom: 1px solid #444; color: #aaa; font-family: 'Rajdhani', sans-serif; font-size: 0.9rem; padding: 5px 0; transition: 0.3s; }
-        .user-ex-note:focus { outline: none; border-bottom-color: var(--neon-blue); color: white; }
+        /* --- CONTENT --- */
+        .view-section { display: none; padding: 20px 15px; max-width: 600px; margin: 0 auto; }
+        .view-section.active-view { display: block; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        .warmup-section { background: rgba(255, 204, 0, 0.05); border: 1px dashed var(--neon-yellow); border-radius: 4px; padding: 10px; margin-bottom: 15px; }
-        .warmup-header { font-size: 0.75rem; color: var(--neon-yellow); font-family: 'Orbitron', sans-serif; margin-bottom: 5px; }
-        .sets-grid { display: flex; flex-wrap: wrap; gap: 8px; }
-        .set-input-group { flex: 1; min-width: 70px; display: flex; flex-direction: column; }
-        .set-input-group label { font-size: 0.7rem; color: #555; margin-bottom: 2px; text-align: center; }
-        .weight-input { background: #000; border: 1px solid #444; color: var(--neon-green); padding: 8px; border-radius: 4px; width: 100%; font-size: 1rem; font-family: 'Orbitron', sans-serif; text-align: center; }
-        .weight-input.warmup { color: var(--neon-yellow); border-color: #554400; }
+        /* --- SETTINGS PANEL --- */
+        .settings-panel { 
+            background: rgba(20, 20, 30, 0.9); border: 1px solid var(--neon-red); 
+            border-radius: 8px; padding: 15px; margin-bottom: 25px;
+        }
+        .settings-header { color: var(--neon-red); font-family: 'Orbitron'; margin-bottom: 10px; font-size: 0.9rem; }
+        .settings-label { font-size: 0.8rem; color: #888; display: block; margin-bottom: 5px; font-family: 'Orbitron'; }
+        .settings-select {
+            width: 100%; background: #000; border: 1px solid #444; color: white;
+            padding: 12px; border-radius: 4px; font-family: 'Rajdhani'; font-size: 1rem;
+            margin-bottom: 15px;
+        }
 
-        .goals-card { background: var(--panel-bg); border: 1px solid var(--neon-purple); border-radius: 8px; padding: 15px; margin-bottom: 20px; display: flex; justify-content: space-between; backdrop-filter: blur(5px); box-shadow: 0 0 10px rgba(188, 19, 254, 0.2); }
-        .goal-item { display: flex; flex-direction: column; align-items: center; gap: 5px; flex: 1; text-align: center; }
-        .goal-icon { font-size: 1.5rem; color: var(--neon-blue); margin-bottom: 5px; }
-        .goal-label { font-size: 0.6rem; color: #aaa; font-family: 'Orbitron', sans-serif; letter-spacing: 1px; }
-        .goal-checkbox { appearance: none; width: 25px; height: 25px; border: 2px solid #444; border-radius: 4px; background: rgba(0,0,0,0.5); cursor: pointer; position: relative; }
-        .goal-checkbox:checked { background: var(--neon-green); border-color: var(--neon-green); box-shadow: 0 0 10px var(--neon-green); }
-        .goal-checkbox:checked::after { content: '✓'; position: absolute; color: black; font-weight: bold; font-size: 16px; top: -2px; left: 4px; }
+        /* --- WARMUP SECTION --- */
+        .warmup-card {
+            background: rgba(255, 204, 0, 0.05); border-left: 3px solid var(--neon-yellow);
+            padding: 15px; margin-bottom: 20px; border-radius: 4px;
+        }
+        .warmup-title { color: var(--neon-yellow); font-family: 'Orbitron'; font-size: 0.9rem; margin-bottom: 10px; display: flex; justify-content: space-between; }
+        .warmup-calc-row { display: flex; gap: 10px; align-items: center; margin-bottom: 10px; }
+        .warmup-input { width: 80px; background: #000; border: 1px solid var(--neon-yellow); color: #fff; padding: 5px; text-align: center; font-family: 'Orbitron'; }
+        .warmup-steps { font-size: 0.85rem; color: #aaa; display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 5px; text-align: center; }
+        .warmup-step { background: rgba(0,0,0,0.5); padding: 5px; border-radius: 3px; border: 1px solid #333; }
+        .warmup-val { color: var(--neon-yellow); font-weight: bold; display: block; }
 
-        /* --- CALENDAR & JOURNAL --- */
-        .journal-container { display: flex; flex-direction: column; gap: 20px; }
-        .calendar-wrapper { background: var(--panel-bg); border: 1px solid var(--neon-blue); border-radius: 8px; padding: 15px; backdrop-filter: blur(5px); }
-        .calendar-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; font-family: 'Orbitron', sans-serif; color: var(--neon-blue); }
-        .calendar-grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-        .cal-day-label { text-align: center; font-size: 0.7rem; color: #666; margin-bottom: 5px; }
-        .cal-day { aspect-ratio: 1; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.05); border-radius: 4px; cursor: pointer; font-size: 0.9rem; position: relative; transition: 0.2s; }
-        .cal-day:hover { background: rgba(0, 247, 255, 0.2); }
-        .cal-day.selected { border: 1px solid var(--neon-blue); background: rgba(0, 247, 255, 0.1); box-shadow: 0 0 5px var(--neon-blue); color: #fff; }
-        .cal-day.has-entry::after { content: ''; position: absolute; bottom: 4px; width: 4px; height: 4px; background: var(--neon-purple); border-radius: 50%; box-shadow: 0 0 4px var(--neon-purple); }
-        .cal-day.empty { background: transparent; cursor: default; }
-        .selected-date-display { text-align: center; font-family: 'Orbitron', sans-serif; color: white; margin: 10px 0; font-size: 1.1rem; }
+        /* --- EXERCISE CARD --- */
+        .ex-card { 
+            background: var(--panel-bg); border: 1px solid #333; border-radius: 8px; 
+            padding: 0; margin-bottom: 20px; position: relative; overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: 0.3s;
+        }
+        .ex-card.completed { border-color: var(--neon-green); opacity: 0.7; }
+        .ex-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--neon-blue);
+        }
+        .ex-card.weak-point::before { background: var(--neon-red); }
 
-        .entry-list { display: flex; flex-direction: column-reverse; gap: 15px; max-height: 400px; overflow-y: auto; }
-        .journal-entry { background: rgba(14,14,18,0.9); border-left: 2px solid var(--neon-purple); padding: 15px; border-radius: 0 8px 8px 0; position: relative; }
-        .entry-content { color: #ccc; white-space: pre-wrap; line-height: 1.5; font-size: 0.95rem; }
-        .photo-gallery { display: flex; gap: 10px; overflow-x: auto; margin-top: 10px; padding-bottom: 5px; }
-        .photo-thumb { height: 80px; border-radius: 4px; border: 1px solid #444; cursor: pointer; }
+        .ex-header { padding: 15px; border-bottom: 1px solid #222; display: flex; flex-direction: column; gap: 10px; }
+        
+        .ex-top-row { display: flex; justify-content: space-between; align-items: flex-start; }
+        
+        .ex-badges { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+        .ex-badge { 
+            font-size: 0.65rem; font-family: 'Orbitron'; padding: 2px 6px; border-radius: 3px; 
+            text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .badge-wp { color: var(--neon-red); border: 1px solid var(--neon-red); background: rgba(255, 0, 60, 0.1); }
+        .badge-opt { color: var(--neon-green); border: 1px solid var(--neon-green); background: rgba(10, 255, 10, 0.1); }
+        .badge-warmup { color: var(--neon-yellow); border: 1px solid var(--neon-yellow); background: rgba(255, 204, 0, 0.1); }
+        .badge-intensity { color: var(--neon-purple); border: 1px solid var(--neon-purple); background: rgba(188, 19, 254, 0.1); }
 
-        /* PHOTO UPLOAD */
-        .photo-btn { background: #222; border: 1px dashed #555; color: #888; padding: 10px; width: 100%; border-radius: 4px; cursor: pointer; margin-bottom: 10px; text-align: center; }
-        .photo-btn:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+        .ex-name { font-size: 1.2rem; font-weight: 700; color: #fff; margin: 0; line-height: 1.2; text-shadow: 0 0 5px rgba(0,0,0,0.8); }
+        .ex-sub-name { font-size: 0.8rem; color: #888; font-style: italic; margin-top: 2px; }
+        .ex-sub-name.visible { display: block; color: var(--neon-blue); }
 
-        .gratitude-section { border-top: 1px solid #333; padding-top: 20px; margin-top: 20px; }
-        .gratitude-title { color: var(--neon-green); font-family: 'Orbitron', sans-serif; margin-bottom: 10px; font-size: 1rem; text-align: center; }
-        .gratitude-input { width: 100%; background: #111; border: 1px solid #333; padding: 10px; margin-bottom: 8px; color: #fff; border-radius: 4px; font-family: 'Rajdhani', sans-serif; }
-        .gratitude-input:focus { border-color: var(--neon-green); outline: none; }
+        .ex-actions { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+        .swap-btn { background: none; border: 1px solid #444; color: #666; padding: 4px 8px; font-size: 0.7rem; font-family: 'Orbitron'; cursor: pointer; border-radius: 3px; }
+        .swap-btn:hover { border-color: var(--neon-blue); color: var(--neon-blue); }
+        .swap-btn.active { background: var(--neon-blue); color: #000; }
 
-        .save-btn { background: var(--neon-blue); color: #000; border: none; padding: 10px 20px; font-family: 'Orbitron', sans-serif; font-weight: bold; cursor: pointer; border-radius: 4px; width: 100%; transition: 0.3s; text-align: center; }
-        .save-btn:hover { box-shadow: 0 0 15px var(--neon-blue); }
-        .save-btn.active { background: var(--neon-green); box-shadow: 0 0 15px var(--neon-green); }
-        .save-btn.inactive { background: #333; color: #888; box-shadow: none; }
+        .check-btn { 
+            width: 30px; height: 30px; border-radius: 50%; background: #222; border: 2px solid #555; 
+            color: transparent; display: flex; align-items: center; justify-content: center; cursor: pointer; transition: 0.2s;
+        }
+        .check-btn.checked { background: var(--neon-green); border-color: var(--neon-green); color: #000; box-shadow: 0 0 10px var(--neon-green); }
 
-        .new-entry-card { background: var(--panel-bg); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px; backdrop-filter: blur(5px); }
-        .entry-textarea { width: 100%; background: #151520; border: 1px solid #333; color: white; padding: 10px; border-radius: 4px; font-family: 'Rajdhani', sans-serif; font-size: 1rem; min-height: 100px; resize: vertical; margin-bottom: 10px; }
+        .ex-body { padding: 15px; }
+        .ex-stats { display: flex; gap: 15px; margin-bottom: 15px; }
+        .stat-box { background: rgba(0,0,0,0.6); padding: 8px; border-radius: 4px; border: 1px solid #333; text-align: center; flex: 1; }
+        .stat-label { font-size: 0.7rem; color: #666; font-family: 'Orbitron'; display: block; margin-bottom: 3px; }
+        .stat-val { font-size: 1.1rem; color: #fff; font-weight: 700; }
 
-        /* TECH BUTTON */
-        .tech-btn { position: relative; width: 100%; height: 4em; outline: none; transition: 0.1s; background-color: transparent; border: none; font-size: 13px; font-weight: bold; color: #ddebf0; cursor: pointer; margin-top: 10px; font-family: 'Orbitron', sans-serif; letter-spacing: 2px; }
-        #clip { --color: #2761c3; position: absolute; top: 0; overflow: hidden; width: 100%; height: 100%; border: 5px double var(--color); box-shadow: inset 0px 0px 15px #195480; -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%); }
-        .arrow { position: absolute; transition: 0.2s; background-color: #2761c3; top: 35%; width: 11%; height: 30%; }
-        #leftArrow { left: -13.5%; -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%); } #rightArrow { -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%); left: 102%; }
-        .tech-btn:hover #rightArrow { background-color: #27c39f; left: -15%; animation: 0.6s ease-in-out both infinite alternate rightArrow8; }
-        .tech-btn:hover #leftArrow { background-color: #27c39f; left: 103%; animation: 0.6s ease-in-out both infinite alternate leftArrow8; }
-        .corner { position: absolute; width: 4em; height: 4em; background-color: #2761c3; box-shadow: inset 1px 1px 8px #2781c3; transform: scale(1) rotate(45deg); transition: 0.2s; }
-        #rightTop { top: -1.98em; left: 91%; } #leftTop { top: -1.96em; left: -3.0em; } #leftBottom { top: 2.10em; left: -2.15em; } #rightBottom { top: 45%; left: 88%; }
-        .tech-btn:hover .corner { transform: scale(1.25) rotate(45deg); } .tech-btn:hover #clip { animation: 0.2s ease-in-out 0.55s both greenLight8; --color: #27c39f; }
-        @keyframes changeColor8 { from { background-color: #2781c3; } to { background-color: #27c39f; } } @keyframes lightEffect8 { from { box-shadow: 1px 1px 5px #27c39f; } to { box-shadow: 0 0 2px #27c39f; } } @keyframes greenLight8 { from { } to { box-shadow: inset 0px 0px 32px #27c39f; } } @keyframes leftArrow8 { from { transform: translate(0px); } to { transform: translateX(10px); } } @keyframes rightArrow8 { from { transform: translate(0px); } to { transform: translateX(-10px); } }
+        .ex-notes { 
+            background: #111; padding: 10px; border-radius: 4px; font-size: 0.85rem; color: #ccc; 
+            border-left: 2px solid #444; margin-bottom: 15px; line-height: 1.4;
+        }
 
-        /* PYRAMID LOADER */
-        .pyramid-loader { position: relative; width: 200px; height: 200px; display: block; margin: 0 auto 30px auto; transform-style: preserve-3d; transform: rotateX(-20deg); }
-        .wrapper { position: relative; width: 100%; height: 100%; transform-style: preserve-3d; animation: spin 4s linear infinite; }
-        @keyframes spin { 100% { transform: rotateY(360deg); } }
-        .pyramid-loader .wrapper .side { width: 70px; height: 70px; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; transform-origin: center top; clip-path: polygon(50% 0%, 0% 100%, 100% 100%); }
-        .pyramid-loader .wrapper .side1 { transform: rotateZ(-30deg) rotateY(90deg); background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585); }
-        .pyramid-loader .wrapper .side2 { transform: rotateZ(30deg) rotateY(90deg); background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC); }
-        .pyramid-loader .wrapper .side3 { transform: rotateX(30deg); background: conic-gradient( #2F2585, #D8CCE6, #F028FD, #2BDEAC); }
-        .pyramid-loader .wrapper .side4 { transform: rotateX(-30deg); background: conic-gradient( #2BDEAC, #F028FD, #D8CCE6, #2F2585); }
-        .pyramid-loader .wrapper .shadow { width: 60px; height: 60px; background: #8B5AD5; position: absolute; top: 0; left: 0; right: 0; bottom: 0; margin: auto; transform: rotateX(90deg) translateZ(-40px); filter: blur(12px); }
+        .input-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+        .set-input { 
+            background: #000; border: 1px solid #444; color: #fff; padding: 10px 5px; 
+            text-align: center; border-radius: 4px; font-family: 'Rajdhani'; font-size: 1rem; width: 100%;
+        }
+        .set-input:focus { border-color: var(--neon-blue); outline: none; box-shadow: 0 0 5px var(--neon-blue); }
 
-        .rest-view { text-align: center; padding: 50px 20px; color: #666; }
-        .rest-view h2 { color: #fff; margin-bottom: 10px; text-shadow: 0 0 10px var(--neon-purple); }
+        /* --- NAVIGATION BUTTONS --- */
+        .nav-action-group { display: flex; gap: 10px; margin-top: 30px; }
+        .nav-action-btn {
+            flex: 1; background: transparent; border: 1px solid #333; color: #888;
+            padding: 15px; font-family: 'Orbitron'; font-size: 0.9rem; letter-spacing: 1px;
+            cursor: pointer; transition: 0.3s; position: relative; overflow: hidden;
+        }
+        .nav-action-btn:hover { background: rgba(255,255,255,0.05); }
+        
+        .nav-action-btn.prev { border-color: var(--neon-blue); color: var(--neon-blue); }
+        .nav-action-btn.prev:hover { background: rgba(0, 247, 255, 0.1); box-shadow: 0 0 15px rgba(0, 247, 255, 0.3); }
+        
+        .nav-action-btn.next { border-color: var(--neon-red); color: var(--neon-red); }
+        .nav-action-btn.next:hover { background: rgba(255, 0, 60, 0.1); box-shadow: 0 0 15px rgba(255, 0, 60, 0.3); }
+
+        .rest-view { text-align: center; padding: 60px 20px; color: #666; }
+        .rest-icon { font-size: 4rem; color: #333; margin-bottom: 20px; animation: float 3s ease-in-out infinite; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
     </style>
 </head>
 <body>
     
     <div class="bg-animation"></div>
+    <div class="grid-overlay"></div>
 
     <nav class="top-nav">
-        <div class="nav-brand">Log<span>3000</span></div>
-        <div class="nav-links nav-links-desktop">
-            <button class="glitch-btn active" id="nav-tracker" data-text="WORKOUTS" onclick="switchView('tracker')">WORKOUTS</button>
-            <button class="glitch-btn" id="nav-journal" data-text="JOURNAL" onclick="switchView('journal')">JOURNAL</button>
-        </div>
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()"><i class="fa-solid fa-bars"></i></button>
+        <div class="nav-brand">CAL3B <span>LOG</span></div>
+        <div style="color: #666; font-size: 0.8rem; font-family: 'Orbitron';" id="date-display"></div>
     </nav>
-    <div class="mobile-dropdown" id="mobile-menu">
-        <button class="glitch-btn active" onclick="switchView('tracker'); toggleMobileMenu()">WORKOUTS</button>
-        <button class="glitch-btn" onclick="switchView('journal'); toggleMobileMenu()">JOURNAL</button>
-    </div>
 
-    <div id="view-tracker" class="view-section active-view">
-        <div class="scroller-container">
-            <div class="week-nav" id="week-scroller"></div>
-            <div class="day-nav">
-                <button class="day-btn active" onclick="setDay(1)">D1</button>
-                <button class="day-btn" onclick="setDay(2)">D2</button>
-                <button class="day-btn" onclick="setDay(3)">D3</button>
-                <button class="day-btn" onclick="setDay(4)">D4</button>
-                <button class="day-btn" onclick="setDay(5)">D5</button>
-                <button class="day-btn" onclick="setDay(6)">D6</button>
-                <button class="day-btn" onclick="setDay(7)">D7</button>
+    <div class="scroller-container">
+        <div class="cycle-nav">
+            <span class="cycle-label" id="program-cycle-label">CYCLE 1</span>
+            <div style="display:flex; gap:10px;">
+                <button onclick="changeView('settings')" style="background:none; border:none; color:#666;"><i class="fa-solid fa-gear"></i></button>
             </div>
         </div>
-        <div id="tracker-content" style="margin-top: 20px;"></div>
+        <div class="day-nav" id="day-scroller">
+            <!-- JS Generated Days -->
+        </div>
     </div>
 
-    <div id="view-journal" class="view-section">
-        <div class="journal-container">
-            <div class="calendar-wrapper">
-                <div class="calendar-header">
-                    <button class="week-btn" onclick="changeMonth(-1)"><i class="fa-solid fa-chevron-left"></i></button>
-                    <span id="cal-month-year" style="font-size:1.1rem; letter-spacing:1px;"></span>
-                    <button class="week-btn" onclick="changeMonth(1)"><i class="fa-solid fa-chevron-right"></i></button>
-                </div>
-                <div class="calendar-grid" id="calendar-grid"></div>
-            </div>
+    <!-- WORKOUT VIEW -->
+    <div id="view-workout" class="view-section active-view">
+        
+        <!-- SETTINGS PANEL (Hidden by default) -->
+        <div id="settings-area" class="settings-panel" style="display:none;">
+            <div class="settings-header">CONFIGURATION PROTOCOL</div>
+            
+            <label class="settings-label">PROGRAM PHASE</label>
+            <select id="phase-selector" class="settings-select" onchange="updatePhase(this.value)">
+                <option value="1">PHASE 1 (Weeks 1-5)</option>
+                <option value="2">PHASE 2 (Weeks 6-10)</option>
+            </select>
 
-            <div class="selected-date-display" id="selected-date-display">SELECT A DATE</div>
+            <label class="settings-label">WEAK POINT TARGET</label>
+            <select id="weak-point-selector" class="settings-select" onchange="updateWeakPoint(this.value)">
+                <option value="chest">CHEST (Press/Fly)</option>
+                <option value="back">BACK (Width/Lats)</option>
+                <option value="delts">SIDE DELTS</option>
+                <option value="quads">QUADS</option>
+                <option value="hams">HAMSTRINGS</option>
+                <option value="arms">ARMS (Bi/Tri)</option>
+                <option value="forearms">FOREARMS</option>
+                <option value="neck">NECK</option>
+                <option value="glutes">GLUTES</option>
+            </select>
 
-            <div class="new-entry-card">
-                <textarea id="journal-input" class="entry-textarea" placeholder="Log entry for selected date..."></textarea>
-                
-                <button class="photo-btn" onclick="document.getElementById('photo-input').click()">
-                    <i class="fa-solid fa-camera"></i> UPLOAD PROGRESS PHOTO
-                </button>
-                <input type="file" id="photo-input" style="display:none" accept="image/*" onchange="handlePhotoUpload(this)">
-                
-                <button class="save-btn" onclick="addJournalEntry()">ADD LOG ENTRY</button>
-            </div>
-
-            <div class="entry-list" id="journal-list"></div>
-
-            <div class="gratitude-section">
-                <div class="gratitude-title">GRATITUDE ARCHIVE</div>
-                <input type="text" class="gratitude-input" id="grat-1" placeholder="1. I am grateful for..." oninput="saveGratitude()">
-                <input type="text" class="gratitude-input" id="grat-2" placeholder="2. I am grateful for..." oninput="saveGratitude()">
-                <input type="text" class="gratitude-input" id="grat-3" placeholder="3. I am grateful for..." oninput="saveGratitude()">
-            </div>
-
-            <div style="margin-top:40px; border-top:1px solid #333; padding-top:20px;">
-                <h3 style="color:#666; font-size:0.9rem; margin-bottom:10px;">DATA MANAGEMENT</h3>
-                <p style="color:#444; font-size:0.7rem;">Note: Photos are stored locally on your device. Clearing browser data will delete them.</p>
-                <button class="tech-btn" onclick="exportData()">
-                    BACKUP DATA
-                    <div id="clip"><div id="leftTop" class="corner"></div><div id="rightBottom" class="corner"></div><div id="rightTop" class="corner"></div><div id="leftBottom" class="corner"></div></div>
-                    <span id="rightArrow" class="arrow"></span><span id="leftArrow" class="arrow"></span>
-                </button>
-                <input type="file" id="import-file" style="display:none" onchange="importData(this)">
-                <button class="tech-btn" onclick="document.getElementById('import-file').click()" style="margin-top:15px; color:#aaa;">
-                    IMPORT DATA
-                    <div id="clip" style="--color: #444;"><div id="leftTop" class="corner"></div><div id="rightBottom" class="corner"></div><div id="rightTop" class="corner"></div><div id="leftBottom" class="corner"></div></div>
-                </button>
-            </div>
+            <button onclick="toggleSettings()" style="width:100%; padding:10px; background:#333; color:#fff; border:none; font-family:'Orbitron'; cursor:pointer;">CLOSE CONFIG</button>
+            <br><br>
+            <button onclick="resetData()" style="width:100%; padding:10px; background:transparent; border:1px solid #555; color:#555; font-family:'Orbitron'; font-size:0.7rem; cursor:pointer;">FACTORY RESET</button>
         </div>
+
+        <div id="tracker-content"></div>
     </div>
 
     <script>
-        // --- INDEXED DB SETUP (For Photos) ---
-        let db;
-        const DB_NAME = 'NexusDB';
-        const STORE_NAME = 'photos';
-
-        function initDB() {
-            const request = indexedDB.open(DB_NAME, 1);
-            request.onupgradeneeded = function(e) {
-                db = e.target.result;
-                if(!db.objectStoreNames.contains(STORE_NAME)) {
-                    db.createObjectStore(STORE_NAME, { keyPath: 'id', autoIncrement: true });
-                }
-            };
-            request.onsuccess = function(e) {
-                db = e.target.result;
-                console.log("DB Open");
-            };
-            request.onerror = function(e) { console.error("DB Error", e); };
-        }
-        initDB();
-
-        // --- APP LOGIC ---
-        let currentWeek = 1; let currentDay = 1; let currentView = 'tracker';
-        let calDate = new Date();
-        let selectedDateKey = new Date().toISOString().split('T')[0];
-
-        const plan = {
-            1: { title: "UPPER BODY (POWER)", exercises: [ { name: "Incline Press (DB if available)", isCompound: true, sets: 4, reps: "6-8", rest: "3:00", notes: "Heavy Compound" }, { name: "Weighted Pull-ups / Lat Pulldown", isCompound: true, sets: 3, reps: "6-8", rest: "2:30", notes: "Heavy Compound" }, { name: "Seated DB Overhead Press", isCompound: true, sets: 3, reps: "6-8", rest: "2:30", notes: "Heavy Compound" }, { name: "Chest Supported Row", isCompound: true, sets: 3, reps: "8-10", rest: "90s", notes: "Volume Compound" }, { name: "Barbell Bicep Curl", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, { name: "Overhead Cable Tricep Ext", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, { name: "Neck Ext/Flexion", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point" } ] },
-            2: { title: "LOWER BODY (POWER)", exercises: [ { name: "Hack Squat/Leg Press/BB Squat", isCompound: true, sets: 3, reps: "6-8", rest: "3:00", notes: "Heavy Compound" }, { name: "Romanian Deadlift (RDL)", isCompound: true, sets: 3, reps: "8-10", rest: "2:30", notes: "Heavy Compound" }, { name: "Leg Press (High/Wide)", sets: 3, reps: "8-10", rest: "90s", notes: "Volume Compound" }, { name: "Lying Hamstring Curl", sets: 3, reps: "8-10", rest: "60s", notes: "Isolation" }, { name: "Standing Calf Raise", sets: 4, reps: "8-12", rest: "45s", notes: "Weak Point" }, { name: "Weighted Farmers Walk", sets: 3, reps: "40-60ft", rest: "45s", notes: "Weak Point / Grip" } ] },
-            3: { type: "rest", title: "SYSTEM RECHARGE", desc: "Critical Recovery Protocol Active." },
-            4: { title: "PUSH (HYPERTROPHY)", exercises: [ { name: "Flat Press (DB if available)", isCompound: true, sets: 3, reps: "10-12", rest: "3:00", notes: "Heavy Compound" }, { name: "Incline Cable Fly", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Cable Lateral Raise SS/Cable Front Raise", sets: 4, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Pec-Deck Fly", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Rope Overhead Tricep Ext", sets: 4, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Single-Arm Cable Pushdown", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" } ] },
-            5: { title: "PULL (HYPERTROPHY)", exercises: [ { name: "Wide-Grip Lat Pulldown", isCompound: true, sets: 3, reps: "10-12", rest: "90s", notes: "Volume Compound" }, { name: "Chest-Supported Row", isCompound: true, sets: 3, reps: "10-12", rest: "90s", notes: "Volume Compound" }, { name: "Face Pull", sets: 4, reps: "15-20", rest: "60s", notes: "Isolation" }, { name: "Reverse Pec-Deck Fly", sets: 4, reps: "15-20", rest: "60s", notes: "Isolation" }, { name: "High Cable Bicep Curl", sets: 4, reps: "10-12", rest: "60s", notes: "Isolation" }, { name: "Hammer Curl", sets: 3, reps: "10-12", rest: "60s", notes: "Isolation" }, { name: "Barbell Wrist Curl", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point" } ] },
-            6: { title: "LEGS (HYPERTROPHY)", exercises: [ { name: "Leg Extension (Dropset last set)", sets: 3, reps: "15-20", rest: "60s", notes: "Isolation / Pre-exhaust" }, { name: "Single-Leg Leg Press", isCompound: true, sets: 3, reps: "12-15", rest: "90s", notes: "Volume Compound" }, { name: "Seated Hamstring Curl", sets: 3, reps: "12-15", rest: "60s", notes: "Isolation" }, { name: "Hip Abduction Machine", sets: 3, reps: "15-20", rest: "45s", notes: "Weak Point / Glutes" }, { name: "Seated Calf Raise", sets: 5, reps: "15-20", rest: "45s", notes: "Weak Point" } ] },
-            7: { type: "rest", title: "SYSTEM RECHARGE", desc: "Full System Reset & Growth.", isDay7: true }
+        // --- DATA STRUCTURES ---
+        const WEAK_POINTS = {
+            chest: { label: 'Chest', ex1: 'Machine Chest Press', ex2: 'Cable Flye (High-to-Low)' },
+            back: { label: 'Back (Width)', ex1: 'Wide Grip Lat Pulldown', ex2: 'Single Arm Cable Row' },
+            delts: { label: 'Side Delts', ex1: 'Machine Lateral Raise', ex2: 'DB Upright Row' },
+            quads: { label: 'Quads', ex1: 'Leg Extension', ex2: 'Goblet Squat (Heels Elevated)' },
+            hams: { label: 'Hamstrings', ex1: 'Seated Leg Curl', ex2: 'Dumbbell RDL' },
+            arms: { label: 'Arms', ex1: 'Bayesian Cable Curl', ex2: 'Tricep Pushdown' },
+            forearms: { label: 'Forearms', ex1: 'DB Wrist Curl (Flexion)', ex2: 'Reverse Grip EZ-Bar Curl' },
+            neck: { label: 'Neck', ex1: 'Plate Neck Curl', ex2: 'Neck Extension' },
+            glutes: { label: 'Glutes', ex1: 'Glute Drive', ex2: 'Cable Glute Kickback' }
         };
 
-        window.onload = function() { 
-            renderWeeks(); loadState(); renderTracker(); 
-            initCalendar(); 
+        const PROGRAM_PHASE_1 = [
+            { day: 1, title: "PULL A (P1)", focus: "LAT FOCUSED", exercises: [
+                { id: 'p1-1', name: "Cross-Body Lat Pull-Around", sets: 3, reps: "10-12", rest: "2-3m", warmup: "1 Set", intensity: "Long-length Partials", note: "Align wrist and cable. Deep stretch.", sub: "Single Arm Lat Pulldown" },
+                { id: 'p1-2', name: "Snatch-Grip RDL", sets: 2, reps: "8-10", rest: "3-4m", warmup: "2-3 Sets", note: "Wide grip. Hamstring focus.", sub: "Dumbbell RDL" },
+                { id: 'p1-3', name: "Chest Supported Machine Row", sets: 3, reps: "10-12", rest: "2-3m", warmup: "1-2 Sets", intensity: "Long-length Partials", note: "Chest supported. Drive elbows back.", sub: "Chest-Supported DB Row" },
+                { id: 'p1-4', name: "Straight-Bar Lat Prayer", sets: 3, reps: "12-15", rest: "1-2m", warmup: "1 Set", intensity: "Long-length Partials", note: "Keep elbows fixed.", sub: "Cable Pullover (Rope)" },
+                { id: 'p1-5', name: "Hammer Preacher Curl", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1 Set", note: "Close grip. Full ROM.", sub: "DB Preacher Curl" },
+                { id: 'p1-6', name: "Lying Paused Rope Face Pull", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", note: "Pause 1s at contraction.", sub: "Reverse Pec Deck" }
+            ]},
+            { day: 2, title: "PUSH A (P1)", focus: "CHEST & DELTS", exercises: [
+                { id: 'pu1-1', name: "Cuffed Behind-Back Lateral Raise", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1-2 Sets", intensity: "Myo-reps", note: "Myo-reps on last set.", sub: "Cable Lateral Raise" },
+                { id: 'pu1-2', name: "Low Incline Smith Press", sets: 3, reps: "8-10", rest: "3m", warmup: "2-3 Sets", intensity: "Pec Static Stretch (30s)", note: "15-30 deg incline. Control negative.", sub: "Low Incline DB Press" },
+                { id: 'pu1-3', name: "Pec Deck (Integrated Partials)", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1 Set", intensity: "Integrated Partials", note: "Full reps then partials on last set.", sub: "Cable Flye" },
+                { id: 'pu1-4', name: "Overhead Cable Tri Ext", sets: 3, reps: "8", rest: "1-2m", warmup: "1 Set", intensity: "Dropset", note: "Elbows high.", sub: "DB Overhead Ext" },
+                { id: 'pu1-5', name: "Triceps Pressdown", sets: 2, reps: "8-10", rest: "90s", warmup: "1 Set", intensity: "Dropset", note: "Lock out hard.", sub: "Band Pushdown" },
+                { id: 'pu1-6', name: "Cable Crunch", sets: 3, reps: "10-15", rest: "90s", warmup: "1 Set", intensity: "Myo-reps", note: "Round back, don't use hips.", sub: "Weighted Sit-Up" }
+            ]},
+            { day: 3, title: "LEGS A (P1)", focus: "QUADS & HAMS", exercises: [
+                { id: 'l1-1', name: "Seated Leg Curl", sets: 3, reps: "8-10", rest: "2-3m", warmup: "1-2 Sets", intensity: "Long-length Partials", note: "Control eccentric.", sub: "Lying Leg Curl" },
+                { id: 'l1-2', name: "Smith Machine Squat", sets: 3, reps: "4,6,8", rest: "3-4m", warmup: "2-4 Sets", note: "Heavy compound.", sub: "Hack Squat / Front Squat" },
+                { id: 'l1-3', name: "Machine Hip Adduction", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", note: "Full ROM.", sub: "Cable Adduction" },
+                { id: 'l1-4', name: "Leg Extension", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1-2 Sets", intensity: "Long-length Partials", note: "Squeeze top.", sub: "Sissy Squat" },
+                { id: 'l1-5', name: "Calf Press on Leg Press", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", intensity: "Calf Static Stretch (30s)", note: "Pause in stretch.", sub: "Seated Calf Raise" }
+            ]},
+            { day: 4, title: "ARMS + WEAK POINT", focus: "SPECIFICITY", isWeakPoint: true, exercises: [
+                { id: 'aw1-1', isWPSlot: 1, sets: 3, reps: "8-12", rest: "2-3m", warmup: "1-3 Sets", note: "Weak point focus exercise." },
+                { id: 'aw1-2', isWPSlot: 2, sets: 2, reps: "10-15", rest: "2m", warmup: "1 Set", optional: true, note: "Optional secondary weak point volume." },
+                { id: 'aw1-3', name: "Bayesian Cable Curl", sets: 3, reps: "8-10", rest: "1-2m", warmup: "1 Set", note: "Long-length Partials", sub: "DB Curl" },
+                { id: 'aw1-4', name: "Seated DB French Press", sets: 3, reps: "10", rest: "1-2m", warmup: "1 Set", note: "To hairline.", sub: "DB Skull Crusher" },
+                { id: 'aw1-5', name: "Bottom-2/3 Constant Tension Preacher Curl", sets: 2, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Elbows high.", sub: "Spider Curl" },
+                { id: 'aw1-6', name: "Cable Tricep Kickback", sets: 2, reps: "12-15", rest: "90s", warmup: "0 Sets", note: "Pin elbow back.", sub: "DB Kickback" },
+                { id: 'aw1-7', name: "Roman Chair Leg Raise", sets: 3, reps: "10-20", rest: "90s", warmup: "0 Sets", note: "Pin elbow back.", sub: "DB Kickback" }
+            ]},
+            { day: 5, title: "REST / RECOVERY", isRest: true },
+            { day: 6, title: "PULL B (P1)", focus: "MID-BACK", exercises: [
+                { id: 'p2-1', name: "Super-ROM Cable Row", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1-2 Sets", note: "Round upper back in stretch.", sub: "T-Bar Row" },
+                { id: 'p2-2', name: "45-Deg Hyperextension", sets: 2, reps: "12-15", rest: "2m", warmup: "1 Set", note: "Lower back/glutes.", sub: "Rack Pull" },
+                { id: 'p2-3', name: "Lean-Back Lat Pulldown", sets: 3, reps: "10-12", rest: "2m", warmup: "1-2 Sets", intensity: "Dropset", note: "Lean back for lower lats.", sub: "Neutral Grip Pulldown" },
+                { id: 'p2-4', name: "Inverse DB Zottman Curl", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Up reverse, down normal.", sub: "Hammer Curl" },
+                { id: 'p2-5', name: "Cable Reverse Fly (Mechanical Dropset)", sets: 3, reps: "5,4,3", rest: "90s", warmup: "0 Sets", intensity: "Mechanical Dropset", note: "You'll probably want to watch the video for this one. Take ~3 big steps back from the cable machine and do your first 5 reps. After those first 5 reps, immediately (without resting) take 1 step forward and do another 4 reps. Then (without resting) take another step forward and do at least another 3 reps (or until you hit RPE 9-10).", sub: "DB Reverse Flye" },
+                { id: 'p2-6', name: "Cable Paused Shrug-In", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", note: "Shrug up and in.", sub: "DB Shrug" }
+            ]},
+            { day: 7, title: "PUSH B (P1)", focus: "DELTS & UPPER", exercises: [
+                { id: 'pu2-1', name: "Machine Shoulder Press", sets: 3, reps: "10-12", rest: "1-2m", warmup: "2-3 Sets", intensity: "Dropset", note: "Heavy compound.", sub: "DB Shoulder Press" },
+                { id: 'pu2-2', name: "Cross-Body Cable Y-Raise", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Side delts in lengthened pos.", sub: "DB Y-Raise (Incline)" },
+                { id: 'pu2-3', name: "Paused Assisted Dip", sets: 3, reps: "8-10", rest: "2m", warmup: "2 Sets", note: "Slow 2-3 second negative. 1-2 second pause at the bottom. Explode with control on the way up. Go as deep as your shoulders comfortably allow, trying to at least break a 90° elbow angle.", sub: "Machine Dip" },
+                { id: 'pu2-4', name: "DB Low Incline Flye", sets: 2, reps: "15-20", rest: "90s", warmup: "1 Set", intensity: "Long-length Partials", note: "Deep stretch.", sub: "Pec Deck" },
+                { id: 'pu2-5', name: "Katana Triceps Ext", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Flare your elbows out at about 45° and keep your elbows locked in place as you complete the extensions.", sub: "Rope Overhead Ext" },
+                { id: 'pu2-6', name: "Ab Wheel Rollout", sets: 3, reps: "10-20", rest: "2m", warmup: "0 Sets", note: "Tight core.", sub: "Hanging Leg Raise" }
+            ]},
+            { day: 8, title: "LEGS B (P1)", focus: "HAMS & QUADS", exercises: [
+                { id: 'l2-1', name: "Lying Leg Curl", sets: 3, reps: "8-10", rest: "1-2m", warmup: "1-2 Sets", intensity: "Long-length Partials", note: "Hips into pad.", sub: "Seated Leg Curl" },
+                { id: 'l2-2', name: "Leg Press", sets: 3, reps: "8", rest: "1-2m", warmup: "2-4 Sets", note: "Feet lower on the platform for more quad focus. Get as deep as you can without excessive back rounding. Control the negative and do a slight pause at the bottom of each rep. Try to add a little weight each week at the same rep count.", sub: "High Bar Squat" },
+                { id: 'l2-3', name: "Smith Machine Lunge", sets: 2, reps: "8", rest: "3-4m", warmup: "2-3 Sets", note: "Reverse lunge.", sub: "DB Walking Lunge" },
+                { id: 'l2-4', name: "Machine Hip Adduction", sets: 3, reps: "10-12", rest: "45s", warmup: "1 Set", note: "Squeeze.", sub: "Cable Adduction" },
+                { id: 'l2-5', name: "Sissy Squat", sets: 3, reps: "10-12", rest: "45s", warmup: "1 Set", note: "Lean back.", sub: "Leg Extension" },
+                { id: 'l2-6', name: "Standing Calf Raise", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", intensity: "Calf Static Stretch (30s)", note: "1-2 second pause at the bottom of each rep. Instead of just going up onto your toes, think about rolling your ankle back and forth on the balls of your feet.", sub: "Donkey Calf Raise" }
+            ]},
+            { day: 9, title: "ARMS + WEAK POINT", focus: "SPECIFICITY", isWeakPoint: true, exercises: [
+                { id: 'aw2-1', isWPSlot: 1, sets: 3, reps: "8-12", rest: "2-3m", warmup: "1-3 Sets", note: "Weak point focus.", optional: false },
+                { id: 'aw2-2', isWPSlot: 2, sets: 2, reps: "10-15", rest: "2m", warmup: "1 Set", optional: true, note: "Secondary weak point." },
+                { id: 'aw2-3', name: "Cable Skull Crusher", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1 Set", note: "Allow the cable to move back behind your head for maximum stretch on the triceps. Reach full extension with your elbows still around eye level at the top", sub: "Seated DB Press" },
+                { id: 'aw2-4', name: "Kneeling Cable Overhead Tri Ext", sets: 3, reps: "10-12", rest: "1-2m", warmup: "1 Set", note: "Rope. Flare elbows.", sub: "EZ Bar French Press" },
+                { id: 'aw2-5', name: "Triceps Diverging Pressdown (Long Rope or 2 Ropes)", sets: 2, reps: "12-15", rest: "1-2m", warmup: "1 Set", note: "Use two long ropes or one long rope. Lean slightly forward, flare your elbows slightly out and keep your arms back in line with your torso. Then do triceps pressdowns, getting a full, big squeeze at the bottom.", sub: "Incline DB Curl" },
+                { id: 'aw2-6', name: "Incline DB Stretch Curl", sets: 2, reps: "12-15", rest: "90s", warmup: "1 Set", note: "Keep your upper back planted against the bench, rotate your arms outward until you feel a massive stretch in your biceps. Go light on these and instead focus on feeling your biceps pull and squeeze.", sub: "Rope Cable Hammer" },
+                { id: 'aw2-7', name: "Cable Crunch", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set" }
+            ]},
+            { day: 10, title: "REST / RECOVERY", isRest: true }
+        ];
+
+        const PROGRAM_PHASE_2 = [
+            { day: 1, title: "PULL A (P2)", focus: "LAT & DETAILS", exercises: [
+                { id: 'p2a-1', name: "Lat-Focused Cable Row", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", intensity: "Integrated Partials", note: "Focus on driving elbow down. Partials at end.", sub: "Single Arm Pull-around" },
+                { id: 'p2a-2', name: "Cable 1-Arm Face Pull", sets: 3, reps: "12-15", rest: "90s", warmup: "1 Set", note: "External rotation focus.", sub: "Rope Face Pull" },
+                { id: 'p2a-3', name: "Chest-Supported Machine Row", sets: 3, reps: "10-12", rest: "2m", warmup: "2 Sets", intensity: "Long-length Partials", note: "Drive elbows back.", sub: "DB Row" },
+                { id: 'p2a-4', name: "Seated Super-Bayesian Cable Curl", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", note: "Arms behind body, cable set high.", sub: "Incline DB Curl" },
+                { id: 'p2a-5', name: "Cable Crunch", sets: 3, reps: "10-15", rest: "90s", warmup: "1 Set", note: "Kneeling or standing.", sub: "Weighted Sit-up" },
+                { id: 'p2a-6', name: "Meadows Incline DB Lateral Raise", sets: 3, reps: "12-15", rest: "90s", warmup: "0 Sets", note: "Lay sideways on incline bench. Raise DB.", sub: "Cable Lateral Raise" }
+            ]},
+            { day: 2, title: "PUSH A (P2)", focus: "CHEST & DELTS", exercises: [
+                { id: 'p2b-1', name: "Flat Machine Chest Press", sets: 3, reps: "8-10", rest: "3m", warmup: "2-3 Sets", intensity: "Lengthened Partials", note: "Heavy compound.", sub: "DB Bench Press" },
+                { id: 'p2b-2', name: "Bottom-Half Seated Cable Flye", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", intensity: "Extend Set", note: "Focus purely on the stretch portion.", sub: "Pec Deck" },
+                { id: 'p2b-3', name: "DB Shoulder Press", sets: 3, reps: "8-12", rest: "3m", warmup: "2 Sets", note: "Seated or standing.", sub: "Machine Shoulder Press" },
+                { id: 'p2b-4', name: "Overhead Cable Tri Ext", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", intensity: "Dropset", note: "Rope/Bar. Elbows high.", sub: "Skull Crusher" },
+                { id: 'p2b-5', name: "Cable Triceps Kickback", sets: 3, reps: "12-15", rest: "90s", warmup: "0 Sets", note: "Strict form.", sub: "DB Kickback" }
+            ]},
+            { day: 3, title: "LEGS A (P2)", focus: "QUADS & HAMS", exercises: [
+                { id: 'p2c-1', name: "Seated Leg Curl", sets: 3, reps: "10-12", rest: "2m", warmup: "1-2 Sets", intensity: "Lengthened Partials", note: "Hamstring focus.", sub: "Lying Leg Curl" },
+                { id: 'p2c-2', name: "Bottom-Half Smith Machine Squat", sets: 3, reps: "6-8", rest: "3m", warmup: "2-4 Sets", intensity: "Extend Set", note: "Do bottom half reps only, then full reps.", sub: "Pause Squat" },
+                { id: 'p2c-3', name: "Glute-Ham Raise", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Or Nordic Curls.", sub: "RDL" },
+                { id: 'p2c-4', name: "Leg Extension", sets: 3, reps: "12-15", rest: "90s", warmup: "1 Set", intensity: "Long-length Partials", note: "Burnout.", sub: "Sissy Squat" },
+                { id: 'p2c-5', name: "Standing Calf Raise", sets: 4, reps: "10-15", rest: "90s", warmup: "1 Set", intensity: "Weighted Static Hold", note: "Hold stretch for 30s.", sub: "Leg Press Calf Raise" },
+                { id: 'p2c-6', name: "Machine Hip Abduction", sets: 3, reps: "15-20", rest: "90s", warmup: "1 Set", note: "Outer glute.", sub: "Cable Abduction" }
+            ]},
+            { day: 4, title: "ARMS + WEAK POINT (P2)", focus: "SPECIFICITY", isWeakPoint: true, exercises: [
+                { id: 'p2d-1', isWPSlot: 1, sets: 3, reps: "8-12", rest: "2-3m", warmup: "1-3 Sets", note: "Weak point focus exercise." },
+                { id: 'p2d-2', isWPSlot: 2, sets: 2, reps: "10-15", rest: "2m", warmup: "1 Set", optional: true, note: "Secondary weak point exercise." },
+                { id: 'p2d-3', name: "EZ-Bar Cable Curl", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Cable stack.", sub: "Barbell Curl" },
+                { id: 'p2d-4', name: "EZ-Bar Skull Crusher", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "To hairline.", sub: "DB Skull Crusher" },
+                { id: 'p2d-5', name: "Bottom-Half Incline DB Curl", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Emphasis on stretch.", sub: "Bayesian Curl" },
+                { id: 'p2d-6', name: "Triceps Pressdown", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", note: "Straight bar.", sub: "Rope Pushdown" }
+            ]},
+            { day: 5, title: "REST / RECOVERY", isRest: true },
+            { day: 6, title: "PULL B (P2)", focus: "MID-BACK", exercises: [
+                { id: 'p2e-1', name: "Smith Machine Deficit Row", sets: 3, reps: "8-10", rest: "3m", warmup: "2-3 Sets", intensity: "Lengthened Partials", note: "Stand on block/plate for deficit.", sub: "Pendlay Row" },
+                { id: 'p2e-2', name: "Neutral-Grip Lat Pulldown", sets: 3, reps: "10-12", rest: "2m", warmup: "1-2 Sets", intensity: "Integrated Partials", note: "Elbows in.", sub: "Chin Up" },
+                { id: 'p2e-3', name: "Moto Cable Row", sets: 3, reps: "12-15", rest: "2m", warmup: "1 Set", note: "Single arm, twisting motion.", sub: "DB Row" },
+                { id: 'p2e-4', name: "Bottom-Half EZ-Bar Preacher Curl", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Stretch focus.", sub: "Machine Preacher Curl" },
+                { id: 'p2e-5', name: "Super-Stretch Reverse Pec Deck", sets: 3, reps: "12-15", rest: "90s", warmup: "1 Set", note: "Rear delts.", sub: "Face Pull" },
+                { id: 'p2e-6', name: "Machine Cheat Shrug", sets: 3, reps: "10-12", rest: "90s", warmup: "1 Set", note: "Controlled cheat on concentric.", sub: "DB Shrug" }
+            ]},
+            { day: 7, title: "PUSH B (P2)", focus: "DELTS & UPPER", exercises: [
+                { id: 'p2f-1', name: "High-Cable Cuffed Lateral Raise", sets: 3, reps: "12-15", rest: "2m", warmup: "1 Set", intensity: "Lengthened Partials", note: "Cable set high.", sub: "DB Lateral Raise" },
+                { id: 'p2f-2', name: "Bottom-Half Low Incline DB Press", sets: 3, reps: "10-12", rest: "3m", warmup: "2 Sets", note: "Stretch focus.", sub: "Incline Smith Press" },
+                { id: 'p2f-3', name: "Machine Shoulder Press", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Constant tension.", sub: "DB Press" },
+                { id: 'p2f-4', name: "Katana Triceps Ext", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", intensity: "Lengthened Partials", note: "Dual cable overhead.", sub: "Overhead DB Ext" },
+                { id: 'p2f-5', name: "Cable Crossover Ladder", sets: 3, reps: "AMRAP", rest: "2m", warmup: "1 Set", note: "High to low, then mid, then low.", sub: "Cable Flye" }
+            ]},
+            { day: 8, title: "LEGS B (P2)", focus: "HAMS & QUADS", exercises: [
+                { id: 'p2g-1', name: "Barbell RDL", sets: 3, reps: "8-10", rest: "3m", warmup: "2-3 Sets", note: "Heavy hinge.", sub: "DB RDL" },
+                { id: 'p2g-2', name: "Super-ROM Leg Press", sets: 3, reps: "10-12", rest: "3m", warmup: "2-4 Sets", note: "Deepest possible depth.", sub: "Hack Squat" },
+                { id: 'p2g-3', name: "Smith Machine Reverse Lunge", sets: 3, reps: "10-12", rest: "2m", warmup: "2 Sets", note: "Unilateral focus.", sub: "Walking Lunge" },
+                { id: 'p2g-4', name: "Weighted 45-Deg Hyperextension", sets: 3, reps: "12-15", rest: "2m", warmup: "1 Set", note: "Glute/Ham focus.", sub: "Good Morning" },
+                { id: 'p2g-5', name: "Leg Extension", sets: 3, reps: "15-20", rest: "90s", warmup: "1 Set", intensity: "Slow Eccentric", note: "3-4s down.", sub: "Sissy Squat" },
+                { id: 'p2g-6', name: "Seated Calf Raise", sets: 3, reps: "12-15", rest: "90s", warmup: "1 Set", note: "Soleus focus.", sub: "Standing Calf Raise" }
+            ]},
+            { day: 9, title: "ARMS + WEAK POINT (P2)", focus: "SPECIFICITY", isWeakPoint: true, exercises: [
+                { id: 'p2h-1', isWPSlot: 1, sets: 3, reps: "8-12", rest: "2-3m", warmup: "1-3 Sets", note: "Weak point focus.", optional: false },
+                { id: 'p2h-2', isWPSlot: 2, sets: 2, reps: "10-15", rest: "2m", warmup: "1 Set", optional: true, note: "Secondary weak point." },
+                { id: 'p2h-3', name: "Kneeling Overhead Cable Curl", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Bicep peak.", sub: "Spider Curl" },
+                { id: 'p2h-4', name: "Triceps Diverging Pressdown", sets: 3, reps: "10-12", rest: "2m", warmup: "1 Set", note: "Or dual rope.", sub: "Straight Bar Pushdown" },
+                { id: 'p2h-5', name: "Incline DB Stretch-Curl", sets: 3, reps: "12-15", rest: "90s", warmup: "0 Sets", note: "Deep stretch.", sub: "Bayesian Curl" },
+                { id: 'p2h-6', name: "Machine Crunch", sets: 3, reps: "15-20", rest: "90s", warmup: "0 Sets", note: "Abs.", sub: "Cable Crunch" }
+            ]},
+            { day: 10, title: "REST / RECOVERY", isRest: true }
+        ];
+
+        // --- APP STATE ---
+        let state = {
+            dayIndex: 0,
+            cycle: 1,
+            phase: 1,
+            weakPoint: 'chest',
+            substitutions: {},
+            completed: {},
+            history: {}
         };
 
-        function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('open'); }
-        function switchView(view) {
-            currentView = view;
-            document.querySelectorAll('.view-section').forEach(el => el.classList.remove('active-view'));
-            document.getElementById(`view-${view}`).classList.add('active-view');
-            document.querySelectorAll('.glitch-btn').forEach(el => el.classList.remove('active'));
-            document.getElementById(`nav-${view}`).classList.add('active');
-            if(view === 'journal') setTimeout(renderCalendar, 100);
+        // --- INIT ---
+        window.onload = function() {
+            loadState();
+            document.getElementById('date-display').innerText = new Date().toLocaleDateString();
+            document.getElementById('weak-point-selector').value = state.weakPoint;
+            document.getElementById('phase-selector').value = state.phase;
+            renderNav();
+            renderWorkout();
+        };
+
+        function loadState() {
+            const saved = localStorage.getItem('nexus_ppl_v2');
+            if(saved) state = JSON.parse(saved);
         }
 
-        // --- TRACKER LOGIC ---
-        function renderWeeks() {
-            const container = document.getElementById('week-scroller');
-            let html = '';
-            for(let i=1; i<=8; i++) {
-                const isComplete = localStorage.getItem(`nexus_week_complete_${i}`) === 'true';
-                const completeClass = isComplete ? 'completed' : '';
-                html += `<button class="week-btn ${i === currentWeek ? 'active' : ''} ${completeClass}" onclick="setWeek(${i})">WEEK ${i} <i class="fa-solid fa-check week-completed-icon"></i></button>`;
+        function saveState() {
+            localStorage.setItem('nexus_ppl_v2', JSON.stringify(state));
+        }
+
+        function toggleSettings() {
+            const el = document.getElementById('settings-area');
+            el.style.display = el.style.display === 'none' ? 'block' : 'none';
+        }
+
+        function updateWeakPoint(val) {
+            state.weakPoint = val;
+            saveState();
+            renderWorkout();
+        }
+
+        function updatePhase(val) {
+            state.phase = parseInt(val);
+            saveState();
+            renderNav();
+            renderWorkout();
+        }
+
+        function resetData() {
+            if(confirm("FACTORY RESET: All progress will be lost. Proceed?")) {
+                localStorage.removeItem('nexus_ppl_v2');
+                location.reload();
             }
-            container.innerHTML = html;
         }
-        function setWeek(w) { currentWeek = w; saveState(); renderWeeks(); renderTracker(); }
-        function setDay(d) { currentDay = d; saveState(); document.querySelectorAll('.day-btn').forEach((btn, i) => btn.classList.toggle('active', i+1 === d)); renderTracker(); }
 
-        function renderTracker() {
-            const container = document.getElementById('tracker-content');
-            const data = plan[currentDay];
-            const prefix = `nexus_w${currentWeek}_d${currentDay}`;
-            const isCompleted = localStorage.getItem(`${prefix}_completed`) === 'true';
+        // --- RENDERERS ---
+        function renderNav() {
+            const container = document.getElementById('day-scroller');
+            container.innerHTML = '';
             
-            if (data.type === 'rest') {
-                let completeBtnHtml = '';
-                if(data.isDay7) {
-                    const isWeekComplete = localStorage.getItem(`nexus_week_complete_${currentWeek}`) === 'true';
-                    const btnText = isWeekComplete ? "WEEK COMPLETE (UNDO)" : "COMPLETE WEEK PROTOCOL";
-                    const btnClass = isWeekComplete ? "inactive" : "active";
-                    completeBtnHtml = `<button class="save-btn ${btnClass}" onclick="toggleWeekComplete(${currentWeek})" style="margin-top:20px;">${btnText}</button>`;
-                }
-                container.innerHTML = `<div class="rest-view"><div class="pyramid-loader"><div class="wrapper"><span class="side side1"></span><span class="side side2"></span><span class="side side3"></span><span class="side side4"></span><span class="shadow"></span></div></div><h2>${data.title}</h2><p>${data.desc}</p>${completeBtnHtml}</div>`;
+            const currentProgram = state.phase === 1 ? PROGRAM_PHASE_1 : PROGRAM_PHASE_2;
+            
+            currentProgram.forEach((day, index) => {
+                const btn = document.createElement('button');
+                btn.className = `day-btn ${index === state.dayIndex ? 'active' : ''} ${day.isRest ? 'rest' : ''}`;
+                btn.innerText = `D${day.day}`;
+                btn.onclick = () => {
+                    state.dayIndex = index;
+                    saveState();
+                    renderNav();
+                    renderWorkout();
+                };
+                container.appendChild(btn);
+            });
+            document.getElementById('program-cycle-label').innerText = `CYCLE ${state.cycle}`;
+        }
+
+        function renderWorkout() {
+            const container = document.getElementById('tracker-content');
+            const currentProgram = state.phase === 1 ? PROGRAM_PHASE_1 : PROGRAM_PHASE_2;
+            const dayData = currentProgram[state.dayIndex];
+            container.innerHTML = '';
+
+            // 1. Header
+            container.innerHTML += `
+                <div style="margin-bottom:20px; border-left:4px solid var(--neon-blue); padding-left:15px;">
+                    <h1 style="margin:0; font-size:1.8rem; color:#fff; text-shadow:0 0 10px var(--neon-blue);">${dayData.title}</h1>
+                    <span style="color:var(--neon-purple); font-family:'Orbitron'; font-size:0.8rem; letter-spacing:2px;">${dayData.focus}</span>
+                </div>
+            `;
+
+            if(dayData.isRest) {
+                container.innerHTML += `
+                    <div class="rest-view">
+                        <i class="fa-solid fa-battery-full rest-icon"></i>
+                        <h2>SYSTEM RECHARGE</h2>
+                        <p>Growth happens during recovery.</p>
+                        <button class="complete-day-btn" onclick="completeDay()">COMPLETE RECOVERY</button>
+                    </div>
+                `;
                 return;
             }
 
-            let html = '';
-            const dateKey = `${prefix}_date`; const timeKey = `${prefix}_time`; const noteKey = `${prefix}_note`;
-            const savedDate = localStorage.getItem(dateKey) || ""; const savedTime = localStorage.getItem(timeKey) || ""; const savedNote = localStorage.getItem(noteKey) || "";
-            const goalSteps = `${prefix}_goal_steps`; const goalProt = `${prefix}_goal_prot`; const goalWater = `${prefix}_goal_water`;
-            const checkSteps = localStorage.getItem(goalSteps) === 'true' ? 'checked' : '';
-            const checkProt = localStorage.getItem(goalProt) === 'true' ? 'checked' : '';
-            const checkWater = localStorage.getItem(goalWater) === 'true' ? 'checked' : '';
+            // 2. Warmup Calculator
+            container.innerHTML += `
+                <div class="warmup-card">
+                    <div class="warmup-title">
+                        <span><i class="fa-solid fa-fire"></i> WARM-UP PROTOCOL</span>
+                    </div>
+                    <div class="warmup-calc-row">
+                        <span style="font-size:0.8rem; color:#888;">TARGET WEIGHT:</span>
+                        <input type="number" id="warmup-base" class="warmup-input" placeholder="lbs/kg" oninput="calcWarmup(this.value)">
+                    </div>
+                    <div class="warmup-steps" id="warmup-steps-display">
+                        <div class="warmup-step"><span class="warmup-val">--</span>10 Reps (50%)</div>
+                        <div class="warmup-step"><span class="warmup-val">--</span>4 Reps (70%)</div>
+                        <div class="warmup-step"><span class="warmup-val">--</span>1 Rep (90%)</div>
+                    </div>
+                </div>
+            `;
 
-            html += `<div class="goals-card"><div class="goal-item"><i class="fa-solid fa-shoe-prints goal-icon"></i><span class="goal-label">10K STEPS</span><input type="checkbox" class="goal-checkbox" ${checkSteps} onclick="saveData('${goalSteps}', this.checked)"></div><div class="goal-item"><i class="fa-solid fa-drumstick-bite goal-icon"></i><span class="goal-label">200g PROT</span><input type="checkbox" class="goal-checkbox" ${checkProt} onclick="saveData('${goalProt}', this.checked)"></div><div class="goal-item"><i class="fa-solid fa-droplet goal-icon"></i><span class="goal-label">1 GAL H2O</span><input type="checkbox" class="goal-checkbox" ${checkWater} onclick="saveData('${goalWater}', this.checked)"></div></div>`;
-            html += `<div class="meta-card"><div class="meta-row"><div class="meta-group"><label>DATE</label><input type="date" class="meta-input" value="${savedDate}" onchange="saveData('${dateKey}', this.value)"></div><div class="meta-group"><label>DURATION</label><input type="text" class="meta-input" placeholder="e.g. 1h 15m" value="${savedTime}" oninput="saveData('${timeKey}', this.value)"></div></div><div class="meta-group"><label>DAILY WORKOUT NOTES</label><textarea class="meta-input" rows="4" placeholder="Energy levels, focus..." oninput="saveData('${noteKey}', this.value)">${savedNote}</textarea></div></div>`;
-            html += `<h3 style="margin-bottom:15px; color:var(--neon-blue)">${data.title}</h3>`;
+            // 3. Exercises
+            dayData.exercises.forEach((ex, idx) => {
+                let name = ex.name;
+                let note = ex.note;
+                let subName = ex.sub;
+                let isWeakPoint = false;
 
-            data.exercises.forEach((ex, index) => {
-                let warmupHtml = '';
-                if(ex.isCompound) {
-                    let inputs = '';
-                    for(let w=1; w<=3; w++) {
-                        const k = `${prefix}_ex${index}_warm${w}`;
-                        const v = localStorage.getItem(k) || "";
-                        inputs += `<div class="set-input-group"><label>W${w}</label><input type="text" class="weight-input warmup" placeholder="lbs" value="${v}" inputmode="decimal" oninput="saveData('${k}', this.value)"></div>`;
-                    }
-                    warmupHtml = `<div class="warmup-section"><div class="warmup-header"><i class="fa-solid fa-fire"></i> WARM UP</div><div class="sets-grid">${inputs}</div></div>`;
+                // Handle Weak Point Slots
+                if(ex.isWPSlot) {
+                    const wp = WEAK_POINTS[state.weakPoint];
+                    if(ex.isWPSlot === 1) { name = wp.ex1; note = `Heavy Compound focus for ${wp.label}`; subName = "Alternate Machine Var"; }
+                    if(ex.isWPSlot === 2) { name = wp.ex2; note = `Isolation / Pump focus for ${wp.label}`; subName = "Alternate Cable Var"; }
+                    isWeakPoint = true;
                 }
-                let setsHtml = '';
-                for(let s=0; s<ex.sets; s++) {
-                    const k = `${prefix}_ex${index}_set${s}`;
-                    const v = localStorage.getItem(k) || "";
-                    setsHtml += `<div class="set-input-group"><label>SET ${s+1}</label><input type="text" class="weight-input" placeholder="lbs" value="${v}" inputmode="decimal" oninput="saveData('${k}', this.value)"></div>`;
-                }
-                const userNoteKey = `${prefix}_ex${index}_usernote`;
-                const savedUserNote = localStorage.getItem(userNoteKey) || "";
-                html += `<div class="ex-card"><div class="ex-header"><div class="ex-title">${ex.name}</div><div class="rest-badge"><i class="fa-regular fa-clock"></i> ${ex.rest}</div></div><div class="ex-details"><div class="detail-item"><i class="fa-solid fa-layer-group"></i> ${ex.sets} Sets</div><div class="detail-item"><i class="fa-solid fa-rotate"></i> ${ex.reps} Reps</div></div>${warmupHtml}<div class="sets-grid" style="margin-top:10px;">${setsHtml}</div><div class="ex-notes-area"><div class="ex-notes-static">${ex.notes}</div><input type="text" class="user-ex-note" placeholder="Your notes (e.g. seat setting)..." value="${savedUserNote}" oninput="saveData('${userNoteKey}', this.value)"></div></div>`;
+
+                const isSubbed = state.substitutions[ex.id];
+                const displayName = isSubbed ? subName : name;
+                const displaySub = isSubbed ? name : subName;
+                const isDone = state.completed[`${state.cycle}-${ex.id}`];
+
+                let badgesHtml = '';
+                if(isWeakPoint) badgesHtml += `<span class="ex-badge badge-wp">WEAK POINT</span>`;
+                if(ex.optional) badgesHtml += `<span class="ex-badge badge-opt">OPTIONAL</span>`;
+                if(ex.warmup) badgesHtml += `<span class="ex-badge badge-warmup">WARM-UP: ${ex.warmup}</span>`;
+                if(ex.intensity) badgesHtml += `<span class="ex-badge badge-intensity">${ex.intensity}</span>`;
+
+                const html = `
+                    <div class="ex-card ${isDone ? 'completed' : ''} ${isWeakPoint ? 'weak-point' : ''}">
+                        <div class="ex-header">
+                            <div class="ex-top-row">
+                                <div>
+                                    <h3 class="ex-name">${displayName}</h3>
+                                    <span class="ex-sub-name ${isSubbed ? 'visible' : ''}">Substituted from original</span>
+                                </div>
+                                <div class="ex-actions">
+                                    <button class="check-btn ${isDone ? 'checked' : ''}" onclick="toggleComplete('${ex.id}')">
+                                        <i class="fa-solid fa-check"></i>
+                                    </button>
+                                    ${!isWeakPoint ? `<button class="swap-btn ${isSubbed ? 'active' : ''}" onclick="toggleSub('${ex.id}')">SWAP</button>` : ''}
+                                </div>
+                            </div>
+                            <div class="ex-badges">
+                                ${badgesHtml}
+                            </div>
+                        </div>
+                        <div class="ex-body">
+                            <div class="ex-stats">
+                                <div class="stat-box">
+                                    <span class="stat-label">SETS</span>
+                                    <span class="stat-val">${ex.sets}</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-label">REPS</span>
+                                    <span class="stat-val">${ex.reps}</span>
+                                </div>
+                                <div class="stat-box">
+                                    <span class="stat-label">REST</span>
+                                    <span class="stat-val">${ex.rest}</span>
+                                </div>
+                            </div>
+                            <div class="ex-notes">
+                                <i class="fa-solid fa-circle-info"></i> "${note}"
+                            </div>
+                            <div class="input-grid">
+                                ${Array(ex.sets).fill(0).map((_, i) => 
+                                    `<input type="text" class="set-input" placeholder="Set ${i+1}">`
+                                ).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += html;
             });
 
-            const btnText = isCompleted ? "WORKOUT COMPLETE (UNDO)" : "COMPLETE WORKOUT";
-            const btnClass = isCompleted ? "inactive" : "active";
-            html += `<button class="save-btn ${btnClass}" style="margin-top:20px; width:100%; height:50px; font-size:1.1rem;" onclick="toggleWorkoutComplete()">${btnText}</button>`;
-            container.innerHTML = html;
+            container.innerHTML += `
+                <div class="nav-action-group">
+                    <button class="nav-action-btn prev" onclick="prevDay()">
+                        <i class="fa-solid fa-backward"></i> REVERT
+                    </button>
+                    <button class="nav-action-btn next" onclick="completeDay()">
+                        ADVANCE <i class="fa-solid fa-forward"></i>
+                    </button>
+                </div>
+            `;
         }
 
-        function toggleWorkoutComplete() {
-            const prefix = `nexus_w${currentWeek}_d${currentDay}`;
-            const isComplete = localStorage.getItem(`${prefix}_completed`) === 'true';
-            localStorage.setItem(`${prefix}_completed`, !isComplete);
-            renderTracker();
-            document.querySelectorAll('.day-btn').forEach((btn, i) => { if(i+1 === currentDay) btn.classList.toggle('completed', !isComplete); });
-        }
-        function toggleWeekComplete(weekNum) {
-            const isComplete = localStorage.getItem(`nexus_week_complete_${weekNum}`) === 'true';
-            localStorage.setItem(`nexus_week_complete_${weekNum}`, !isComplete);
-            renderWeeks(); renderTracker();
-        }
-
-        // --- CALENDAR & JOURNAL ---
-        function initCalendar() { renderCalendar(); selectDate(new Date().toISOString().split('T')[0]); }
-        function changeMonth(delta) { calDate.setMonth(calDate.getMonth() + delta); renderCalendar(); }
-        function renderCalendar() {
-            const year = calDate.getFullYear(); const month = calDate.getMonth();
-            const firstDay = new Date(year, month, 1).getDay();
-            const daysInMonth = new Date(year, month + 1, 0).getDate();
-            const grid = document.getElementById('calendar-grid');
-            const monthName = calDate.toLocaleString('default', { month: 'long' });
-            document.getElementById('cal-month-year').innerText = `${monthName.toUpperCase()} ${year}`;
-            let html = '';
-            const days = ['S','M','T','W','T','F','S'];
-            days.forEach(d => html += `<div class="cal-day-label">${d}</div>`);
-            for(let i=0; i<firstDay; i++) { html += `<div class="cal-day empty"></div>`; }
-            for(let d=1; d<=daysInMonth; d++) {
-                const dateString = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-                const hasEntry = checkDataExists(dateString);
-                const hasEntryClass = hasEntry ? 'has-entry' : '';
-                const selectedClass = dateString === selectedDateKey ? 'selected' : '';
-                html += `<div class="cal-day ${hasEntryClass} ${selectedClass}" onclick="selectDate('${dateString}')">${d}</div>`;
+        // --- ACTIONS ---
+        function calcWarmup(weight) {
+            const w = parseFloat(weight);
+            if(!w) {
+                document.getElementById('warmup-steps-display').innerHTML = `
+                    <div class="warmup-step"><span class="warmup-val">--</span>10 Reps (50%)</div>
+                    <div class="warmup-step"><span class="warmup-val">--</span>4 Reps (70%)</div>
+                    <div class="warmup-step"><span class="warmup-val">--</span>1 Rep (90%)</div>
+                `;
+                return;
             }
-            grid.innerHTML = html;
-        }
-        function checkDataExists(dateStr) {
-            const entries = JSON.parse(localStorage.getItem(`nexus_journal_${dateStr}`) || "[]");
-            const grat = JSON.parse(localStorage.getItem(`nexus_gratitude_${dateStr}`) || "[]");
-            // Also check for photos in IndexedDB? (Async, hard to do in sync render). 
-            // Simplified: Checking text entries for now.
-            return entries.length > 0 || grat.length > 0;
-        }
-        function selectDate(dateStr) {
-            selectedDateKey = dateStr;
-            renderCalendar();
-            const dateObj = new Date(dateStr + 'T00:00:00');
-            document.getElementById('selected-date-display').innerText = dateObj.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }).toUpperCase();
-            loadJournalEntries(dateStr);
-            loadGratitude(dateStr);
+            const s1 = Math.round(w * 0.5);
+            const s2 = Math.round(w * 0.7);
+            const s3 = Math.round(w * 0.9);
+            document.getElementById('warmup-steps-display').innerHTML = `
+                <div class="warmup-step"><span class="warmup-val">${s1}</span>10 Reps</div>
+                <div class="warmup-step"><span class="warmup-val">${s2}</span>4 Reps</div>
+                <div class="warmup-step"><span class="warmup-val">${s3}</span>1 Rep</div>
+            `;
         }
 
-        // --- PHOTO HANDLING ---
-        function handlePhotoUpload(input) {
-            if (input.files && input.files[0]) {
-                const file = input.files[0];
-                // COMPRESS IMAGE
-                const reader = new FileReader();
-                reader.readAsDataURL(file);
-                reader.onload = function(event) {
-                    const img = new Image();
-                    img.src = event.target.result;
-                    img.onload = function() {
-                        const canvas = document.createElement('canvas');
-                        const MAX_WIDTH = 800; 
-                        const scaleSize = MAX_WIDTH / img.width;
-                        canvas.width = MAX_WIDTH;
-                        canvas.height = img.height * scaleSize;
-                        const ctx = canvas.getContext('2d');
-                        ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-                        
-                        // Convert to compressed Base64
-                        const dataUrl = canvas.toDataURL('image/jpeg', 0.7); 
-                        savePhotoToDB(selectedDateKey, dataUrl);
-                    }
-                }
-            }
+        function toggleSub(exId) {
+            state.substitutions[exId] = !state.substitutions[exId];
+            saveState();
+            renderWorkout();
         }
 
-        function savePhotoToDB(date, dataUrl) {
-            if(!db) return;
-            const transaction = db.transaction([STORE_NAME], 'readwrite');
-            const store = transaction.objectStore(STORE_NAME);
-            const entry = { date: date, image: dataUrl, timestamp: new Date().getTime() };
-            store.add(entry);
-            transaction.oncomplete = function() {
-                loadJournalEntries(date); // Refresh list to show photo
-            };
+        function toggleComplete(exId) {
+            const key = `${state.cycle}-${exId}`;
+            state.completed[key] = !state.completed[key];
+            saveState();
+            renderWorkout();
         }
 
-        // --- JOURNAL ENTRIES ---
-        function addJournalEntry() {
-            const input = document.getElementById('journal-input'); const text = input.value.trim();
-            if (!text) return;
-            const entries = JSON.parse(localStorage.getItem(`nexus_journal_${selectedDateKey}`) || "[]");
-            const now = new Date();
-            const timeStr = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
-            entries.push({ time: timeStr, text: text });
-            localStorage.setItem(`nexus_journal_${selectedDateKey}`, JSON.stringify(entries));
-            input.value = ""; loadJournalEntries(selectedDateKey); renderCalendar();
-        }
-
-        function loadJournalEntries(dateStr) {
-            const list = document.getElementById('journal-list');
-            list.innerHTML = '';
-
-            // 1. Load Text Entries
-            const entries = JSON.parse(localStorage.getItem(`nexus_journal_${dateStr}`) || "[]");
-            entries.forEach(entry => { 
-                list.innerHTML += `<div class="journal-entry"><div class="entry-date">${entry.time}</div><div class="entry-content">${entry.text}</div></div>`; 
-            });
-
-            // 2. Load Photos from IndexedDB
-            if(db) {
-                const transaction = db.transaction([STORE_NAME], 'readonly');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.getAll();
-                request.onsuccess = function(e) {
-                    const photos = e.target.result;
-                    const daysPhotos = photos.filter(p => p.date === dateStr);
-                    if(daysPhotos.length > 0) {
-                        let galleryHtml = '<div class="photo-gallery">';
-                        daysPhotos.forEach(p => {
-                            galleryHtml += `<img src="${p.image}" class="photo-thumb" onclick="alert('Full size view not implemented in V12')">`;
-                        });
-                        galleryHtml += '</div>';
-                        list.innerHTML = galleryHtml + list.innerHTML;
-                    }
-                };
-            }
+        function completeDay() {
+            window.scrollTo(0,0);
+            state.dayIndex++;
+            const currentProgram = state.phase === 1 ? PROGRAM_PHASE_1 : PROGRAM_PHASE_2;
             
-            if (entries.length === 0) list.innerHTML += `<div style="text-align:center; color:#555; padding:20px;">No text entries for this date.</div>`;
+            if(state.dayIndex >= currentProgram.length) {
+                state.dayIndex = 0;
+                state.cycle++;
+            }
+            saveState();
+            renderNav();
+            renderWorkout();
         }
 
-        function saveGratitude() {
-            const g1 = document.getElementById('grat-1').value;
-            const g2 = document.getElementById('grat-2').value;
-            const g3 = document.getElementById('grat-3').value;
-            localStorage.setItem(`nexus_gratitude_${selectedDateKey}`, JSON.stringify([g1,g2,g3]));
-            renderCalendar();
-        }
-        function loadGratitude(dateStr) {
-            const data = JSON.parse(localStorage.getItem(`nexus_gratitude_${dateStr}`) || "[\"\", \"\", \"\"]");
-            document.getElementById('grat-1').value = data[0] || "";
-            document.getElementById('grat-2').value = data[1] || "";
-            document.getElementById('grat-3').value = data[2] || "";
-        }
-
-        // --- SYSTEM UTILS ---
-        function saveData(key, value) { localStorage.setItem(key, value); }
-        function saveState() { localStorage.setItem('nexus_current_week', currentWeek); localStorage.setItem('nexus_current_day', currentDay); }
-        function loadState() {
-            currentWeek = parseInt(localStorage.getItem('nexus_current_week') || 1);
-            currentDay = parseInt(localStorage.getItem('nexus_current_day') || 1);
-            document.querySelectorAll('.day-btn').forEach((btn, i) => {
-                btn.classList.toggle('active', i+1 === currentDay);
-                if(localStorage.getItem(`nexus_w${currentWeek}_d${i+1}_completed`) === 'true') btn.classList.add('completed');
-                else btn.classList.remove('completed');
-            });
+        function prevDay() {
+            const currentProgram = state.phase === 1 ? PROGRAM_PHASE_1 : PROGRAM_PHASE_2;
+            
+            if (state.dayIndex > 0) {
+                state.dayIndex--;
+            } else if (state.cycle > 1) {
+                state.cycle--;
+                state.dayIndex = currentProgram.length - 1;
+            } else {
+                alert("SYSTEM ERROR: ARCHIVE EMPTY. CANNOT REVERT FURTHER.");
+                return;
+            }
+            window.scrollTo(0,0);
+            saveState();
+            renderNav();
+            renderWorkout();
         }
 
-        function exportData() {
-            // Note: This only exports LocalStorage (Text). IndexedDB export is complex for a single file.
-            const data = JSON.stringify(localStorage);
-            const blob = new Blob([data], {type: "application/json"});
-            const url = URL.createObjectURL(blob);
-            const a = document.createElement('a'); a.href = url; a.download = `nexus_backup_${new Date().toISOString().slice(0,10)}.json`; a.click();
-            alert("Backup downloaded. Note: Photos are NOT included in this JSON backup file due to size limitations.");
+        function changeView(viewName) {
+            if(viewName === 'settings') toggleSettings();
         }
 
-        function importData(input) {
-            const file = input.files[0]; if (!file) return;
-            const reader = new FileReader();
-            reader.onload = function(e) {
-                try {
-                    const data = JSON.parse(e.target.result);
-                    Object.keys(data).forEach(key => { localStorage.setItem(key, data[key]); });
-                    alert('SYSTEM RESTORE SUCCESSFUL. REBOOTING...'); location.reload();
-                } catch(err) { alert('DATA CORRUPT. RESTORE FAILED.'); }
-            };
-            reader.readAsText(file);
-        }
     </script>
 </body>
 </html>
